@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MainContainer from "./screens/MainContainer";
 
 function App() {
   console.log(1);
@@ -8,7 +9,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         {/* <Route element={<h1>Protect</h1>}> */}
-        <Route path="/" element={<h1>Head</h1>}>
+        <Route path="/" element={<MainContainer />}>
           <Route index element={<h1>1</h1>} />
           <Route path="first" element={<h1>2</h1>} />
           <Route path="second" element={<h1>3</h1>} />
