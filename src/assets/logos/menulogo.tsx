@@ -1,4 +1,3 @@
-import * as React from "react";
 const SvgComponent = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -21,8 +20,8 @@ const SvgComponent = () => (
         y2="23"
         gradientUnits="userSpaceOnUse"
       >
-        <stop stop-color="white" stop-opacity="0.7" />
-        <stop offset="1" stop-color="white" />
+        <stop stopColor="white" stopOpacity="0.7" />
+        <stop offset="1" stopColor="white" />
       </linearGradient>
     </defs>
   </svg>
