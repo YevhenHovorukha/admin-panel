@@ -21,7 +21,7 @@ import Typography from "@mui/material/Typography";
 import { Button, TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import SVGinvisible from "../../assets/logos/isVisible";
-import MySvgFile from "../../assets/logos/authLogo";
+import LogoSVG from "../../assets/logos/authLogo";
 import { useForm, SubmitHandler } from "react-hook-form";
 
 const SignUp = () => {
@@ -47,7 +47,7 @@ const SignUp = () => {
       <Card sx={CardStyle}>
         <Box sx={LogoBoxStyle}>
           <Icon sx={IconStyle}>
-            <MySvgFile />
+            <LogoSVG />
           </Icon>
           <Typography variant="subtitle1" sx={LogoTextStyle}>
             Dashboard Kit
