@@ -50,6 +50,7 @@ const theme: Theme = createTheme({
         {
           props: { variant: "inputLabel" },
           style: {
+            fontFamily: "Mulish,Roboto,sansSerif",
             display: "block",
             marginTop: "24px",
             color: "#9FA2B4",
@@ -59,7 +60,47 @@ const theme: Theme = createTheme({
             textTransform: "uppercase",
           },
         },
+        {
+          props: { variant: "authMainText" },
+          style: {
+            fontFamily: "Mulish,Roboto,sansSerif",
+            margin: "32px auto 0",
+            fontSize: "24px",
+            fontWeight: 700,
+            letterSpacing: "0.3px",
+          },
+        },
+        {
+          props: { variant: "authAdditionalText" },
+          style: {
+            fontFamily: "Mulish,Roboto,sansSerif",
+            margin: "12px auto 0",
+            color: "#9FA2B4",
+            fontSize: "14px",
+            fontWeight: 400,
+            lineHeight: "20px",
+            letterSpacing: "0.3px",
+          },
+        },
+        {
+          props: { variant: "authLogoText" },
+          style: {
+            fontFamily: "Mulish,Roboto,sansSerif",
+            fontSize: "19px",
+            fontWeight: 700,
+            color: "#A4A6B3",
+            letterSpacing: "0.4px",
+          },
+        },
       ],
+    },
+    MuiIcon: {
+      styleOverrides: {
+        fontSizeSmall: {
+          width: "48px",
+          height: "48px",
+        },
+      },
     },
   },
 });

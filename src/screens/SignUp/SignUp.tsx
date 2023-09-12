@@ -25,21 +25,7 @@ import LogoSVG from "../../assets/logos/authLogo";
 import { useForm, SubmitHandler } from "react-hook-form";
 import styled from "styled-components";
 import AuthInput from "../../components/AuthInput";
-
-const StyledTypography = styled(Typography)`
-  margin-top: 24px;
-  color: #9fa2b4;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
-  text-transform: uppercase;
-`;
-
-const StyledTextField = styled(TextField)`
-  padding: 0;
-  margin-top: 6px;
-  width: 100%;
-`;
+import AuthCardInfo from "../../components/AuthCardInfo";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -47,20 +33,11 @@ const SignUp = () => {
   return (
     <Container sx={containerStyles}>
       <Card sx={CardStyle}>
-        <Box sx={LogoBoxStyle}>
-          <Icon sx={IconStyle}>
-            <LogoSVG />
-          </Icon>
-          <Typography variant="subtitle1" sx={LogoTextStyle}>
-            Dashboard Kit
-          </Typography>
-        </Box>
-        <Typography variant="h1" sx={MainTextStyle}>
-          Sign Up
-        </Typography>
-        <Typography variant="subtitle1" sx={AdditionalTextStyle}>
-          Create a new account
-        </Typography>
+        <AuthCardInfo
+          mainText="Sign Up"
+          additionalText="Create a new account"
+        />
+
         <Box
           component="form"
           sx={FormStyle}
