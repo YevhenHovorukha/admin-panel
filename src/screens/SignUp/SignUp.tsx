@@ -1,46 +1,40 @@
-import { useState } from "react";
-import { Container } from "@mui/material";
-import {
-  containerStyles,
-  CardStyle,
-  LogoBoxStyle,
-  IconStyle,
-  LogoTextStyle,
-  MainTextStyle,
-  AdditionalTextStyle,
-  LabelStyle,
-  InputStyle,
-  FormStyle,
-  InputProps,
-  ButtonStyle,
-} from "./Styles";
+import { Container, Typography } from "@mui/material";
+import { containerStyles } from "./Styles";
 import Card from "@mui/material/Card";
 import { Box } from "@mui/system";
-import Icon from "@mui/material/Icon";
-import Typography from "@mui/material/Typography";
-import { Button, TextField } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import SVGinvisible from "../../assets/logos/isVisible";
-import LogoSVG from "../../assets/logos/authLogo";
+import { Button } from "@mui/material";
 import { useForm, SubmitHandler } from "react-hook-form";
-import styled from "styled-components";
 import AuthInput from "../../components/AuthInput";
 import AuthCardInfo from "../../components/AuthCardInfo";
+import styled from "styled-components";
+
+const StyledBox = styled(Box)`
+  margin-top: 48px;
+`;
+
+const StyledCard = styled(Card)`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px 32px;
+  width: 380px;
+  height: 794px;
+`;
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
 
   return (
     <Container sx={containerStyles}>
-      <Card sx={CardStyle}>
+      <StyledCard>
         <AuthCardInfo
           mainText="Sign Up"
           additionalText="Create a new account"
         />
 
-        <Box
+        <StyledBox
           component="form"
-          sx={FormStyle}
           onSubmit={handleSubmit((data) => {
             console.log(data);
           })}
@@ -86,16 +80,11 @@ const SignUp = () => {
             isPassword={true}
           />
 
-          <Button
-            sx={ButtonStyle}
-            type="submit"
-            variant="contained"
-            color="primary"
-          >
+          <Button type="submit" variant="contained" color="primary">
             Register
           </Button>
-        </Box>
-      </Card>
+        </StyledBox>
+      </StyledCard>
     </Container>
   );
 };

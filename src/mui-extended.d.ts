@@ -7,4 +7,8 @@ declare module "@mui/material" {
     authAdditionalText: true;
     authLogoText: true;
   }
+
+  interface ButtonPropsVariantOverrides {
+    authButton: true;
+  }
 }

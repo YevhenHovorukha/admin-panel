@@ -10,6 +10,18 @@ const theme: Theme = createTheme({
     fontFamily: "Mulish, Roboto, sans-serif",
   },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: {
+        "@global": {
+          body: {
+            fontFamily: "Mulish, Roboto, sans-serif",
+            margin: 0,
+            padding: 0,
+            boxSizing: "border-box",
+          },
+        },
+      },
+    },
     MuiContainer: {
       styleOverrides: {
         root: {
@@ -99,6 +111,17 @@ const theme: Theme = createTheme({
         fontSizeSmall: {
           width: "48px",
           height: "48px",
+        },
+      },
+    },
+    MuiButton: {
+      styleOverrides: {
+        contained: {
+          marginTop: "24px",
+          height: "48px",
+          width: "100%",
+          borderRadius: "8px",
+          textTransform: "none",
         },
       },
     },
