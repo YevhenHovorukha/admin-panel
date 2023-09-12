@@ -33,7 +33,7 @@ const AuthInput = ({
       placeholder={text}
       {...register(registerName)}
       inputProps={{
-        style: { padding: "0" },
+        style: { padding: "0 16px" },
       }}
       InputProps={
         isPassword

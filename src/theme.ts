@@ -23,14 +23,43 @@ const theme: Theme = createTheme({
         },
       },
     },
-
+    MuiFormControl: {
+      styleOverrides: {
+        root: {
+          marginTop: "6px",
+        },
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         input: {
           height: "42px",
-          padding: 0,
+          padding: "0",
         },
       },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          marginRight: "-8px",
+        },
+      },
+    },
+    MuiTypography: {
+      variants: [
+        {
+          props: { variant: "inputLabel" },
+          style: {
+            display: "block",
+            marginTop: "24px",
+            color: "#9FA2B4",
+            fontSize: "12px",
+            fontWeight: 700,
+            letterSpacing: "0.3px",
+            textTransform: "uppercase",
+          },
+        },
+      ],
     },
   },
 });

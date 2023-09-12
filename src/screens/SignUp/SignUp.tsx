@@ -26,6 +26,15 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import styled from "styled-components";
 import AuthInput from "../../components/AuthInput";
 
+const StyledTypography = styled(Typography)`
+  margin-top: 24px;
+  color: #9fa2b4;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+`;
+
 const StyledTextField = styled(TextField)`
   padding: 0;
   margin-top: 6px;
@@ -33,22 +42,7 @@ const StyledTextField = styled(TextField)`
 `;
 
 const SignUp = () => {
-  const [isVisible, setIsVisible] = useState({
-    passwordInput: false,
-    confirmInput: false,
-  });
-
   const { register, handleSubmit } = useForm();
-
-  const handlerIsVisible = (nameInput: string) => {
-    setIsVisible((prevState) => {
-      if (nameInput === "passwordInput") {
-        return { ...prevState, [nameInput]: !prevState[nameInput] };
-      } else {
-        return { ...prevState, confirmInput: !prevState.confirmInput };
-      }
-    });
-  };
 
   return (
     <Container sx={containerStyles}>
@@ -74,90 +68,47 @@ const SignUp = () => {
             console.log(data);
           })}
         >
-          <Typography variant="subtitle1">email</Typography>
-          <StyledTextField
-            placeholder="Email address"
-            {...register("email")}
-            inputProps={{
-              style: { padding: "0" },
-            }}
-          />
-          <Typography variant="subtitle1">email</Typography>
+          <Typography variant="inputLabel">email</Typography>
 
           <AuthInput
             text="Email address"
             register={register}
-            registerName={"secEmail"}
+            registerName={"email"}
+          />
+
+          <Typography variant="inputLabel">First name</Typography>
+
+          <AuthInput
+            text="First Name"
+            register={register}
+            registerName={"firstName"}
+          />
+
+          <Typography variant="inputLabel">LAST name</Typography>
+
+          <AuthInput
+            text="Last Name"
+            register={register}
+            registerName={"lastName"}
+          />
+
+          <Typography variant="inputLabel">password</Typography>
+
+          <AuthInput
+            text="Password"
+            register={register}
+            registerName={"password"}
             isPassword={true}
           />
-          {/* <Typography variant="subtitle1" sx={LabelStyle}>
-            First name
-          </Typography>
-          <TextField
-            sx={InputStyle}
-            inputProps={{
-              style: InputProps,
-            }}
-            placeholder="First name"
-            {...register("firstName")}
+          <Typography variant="inputLabel">confirm password</Typography>
+
+          <AuthInput
+            text="Password"
+            register={register}
+            registerName={"confirmPassword"}
+            isPassword={true}
           />
-          <Typography variant="subtitle1" sx={LabelStyle}>
-            LAST name
-          </Typography>
-          <TextField
-            sx={InputStyle}
-            inputProps={{
-              style: InputProps,
-            }}
-            placeholder="Last name"
-            {...register("lastName")}
-          />
-          <Typography variant="subtitle1" sx={LabelStyle}>
-            password
-          </Typography>
-          <TextField
-            autoComplete="on"
-            sx={InputStyle}
-            inputProps={{
-              style: InputProps,
-            }}
-            placeholder="Password"
-            {...register("password")}
-            InputProps={{
-              endAdornment: (
-                <IconButton
-                  edge="end"
-                  onClick={() => handlerIsVisible("passwordInput")}
-                >
-                  <SVGinvisible />
-                </IconButton>
-              ),
-            }}
-            type={isVisible.passwordInput ? "text" : "password"}
-          />
-          <Typography variant="subtitle1" sx={LabelStyle}>
-            confirm password
-          </Typography>
-          <TextField
-            autoComplete="on"
-            sx={InputStyle}
-            inputProps={{
-              style: InputProps,
-            }}
-            InputProps={{
-              endAdornment: (
-                <IconButton
-                  edge="end"
-                  onClick={() => handlerIsVisible("confirmInput")}
-                >
-                  <SVGinvisible />
-                </IconButton>
-              ),
-            }}
-            placeholder="Password"
-            {...register("confirmPassword")}
-            type={isVisible.confirmInput ? "text" : "password"}
-          /> */}
+
           <Button
             sx={ButtonStyle}
             type="submit"
