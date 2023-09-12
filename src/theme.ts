@@ -23,6 +23,15 @@ const theme: Theme = createTheme({
         },
       },
     },
+
+    MuiInputBase: {
+      styleOverrides: {
+        input: {
+          height: "42px",
+          padding: 0,
+        },
+      },
+    },
   },
 });
 

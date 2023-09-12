@@ -23,6 +23,14 @@ import IconButton from "@mui/material/IconButton";
 import SVGinvisible from "../../assets/logos/isVisible";
 import LogoSVG from "../../assets/logos/authLogo";
 import { useForm, SubmitHandler } from "react-hook-form";
+import styled from "styled-components";
+import AuthInput from "../../components/AuthInput";
+
+const StyledTextField = styled(TextField)`
+  padding: 0;
+  margin-top: 6px;
+  width: 100%;
+`;
 
 const SignUp = () => {
   const [isVisible, setIsVisible] = useState({
@@ -66,18 +74,23 @@ const SignUp = () => {
             console.log(data);
           })}
         >
-          <Typography variant="subtitle1" sx={LabelStyle}>
-            email
-          </Typography>
-          <TextField
-            sx={InputStyle}
-            inputProps={{
-              style: InputProps,
-            }}
+          <Typography variant="subtitle1">email</Typography>
+          <StyledTextField
             placeholder="Email address"
             {...register("email")}
+            inputProps={{
+              style: { padding: "0" },
+            }}
           />
-          <Typography variant="subtitle1" sx={LabelStyle}>
+          <Typography variant="subtitle1">email</Typography>
+
+          <AuthInput
+            text="Email address"
+            register={register}
+            registerName={"secEmail"}
+            isPassword={true}
+          />
+          {/* <Typography variant="subtitle1" sx={LabelStyle}>
             First name
           </Typography>
           <TextField
@@ -103,6 +116,7 @@ const SignUp = () => {
             password
           </Typography>
           <TextField
+            autoComplete="on"
             sx={InputStyle}
             inputProps={{
               style: InputProps,
@@ -125,6 +139,7 @@ const SignUp = () => {
             confirm password
           </Typography>
           <TextField
+            autoComplete="on"
             sx={InputStyle}
             inputProps={{
               style: InputProps,
@@ -142,7 +157,7 @@ const SignUp = () => {
             placeholder="Password"
             {...register("confirmPassword")}
             type={isVisible.confirmInput ? "text" : "password"}
-          />
+          /> */}
           <Button
             sx={ButtonStyle}
             type="submit"
