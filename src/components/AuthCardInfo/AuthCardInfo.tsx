@@ -1,8 +1,12 @@
-import { Box, Typography, Icon } from "@mui/material";
-
 import MainLogo from "../../assets/logos/authLogo";
 
-import { StyledBox } from "./styles";
+import {
+  StyledBox,
+  StyledMainText,
+  StyledAdditText,
+  StyledLogoText,
+  StyledLogoIcon,
+} from "./styles";
 
 interface IAuthCardInfo {
   mainText: string;
@@ -13,13 +17,13 @@ const AuthCardInfo = ({ mainText, additionalText }: IAuthCardInfo) => {
   return (
     <>
       <StyledBox>
-        <Icon fontSize="small">
+        <StyledLogoIcon>
           <MainLogo />
-        </Icon>
-        <Typography variant="authLogoText">Dashboard Kit</Typography>
+        </StyledLogoIcon>
+        <StyledLogoText>Dashboard Kit</StyledLogoText>
       </StyledBox>
-      <Typography variant="authMainText">{mainText}</Typography>
-      <Typography variant="authAdditionalText">{additionalText}</Typography>
+      <StyledMainText>{mainText}</StyledMainText>
+      <StyledAdditText>{additionalText}</StyledAdditText>
     </>
   );
 };

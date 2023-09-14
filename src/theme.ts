@@ -11,31 +11,6 @@ const theme: Theme = createTheme({
   },
 
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        "@global": {
-          body: {
-            fontFamily: "Mulish, Roboto, sans-serif",
-            margin: 0,
-            padding: 0,
-            boxSizing: "border-box",
-          },
-        },
-      },
-    },
-    MuiContainer: {
-      styleOverrides: {
-        root: {
-          "@media (min-width: 1200px)": {
-            maxWidth: "none",
-          },
-          "@media (min-width: 600px)": {
-            paddingLeft: "0",
-            paddingRight: "0",
-          },
-        },
-      },
-    },
     MuiFormControl: {
       styleOverrides: {
         root: {
@@ -83,18 +58,7 @@ const theme: Theme = createTheme({
             letterSpacing: "0.3px",
           },
         },
-        {
-          props: { variant: "authAdditionalText" },
-          style: {
-            fontFamily: "Mulish,Roboto,sansSerif",
-            margin: "12px auto 0",
-            color: "#9FA2B4",
-            fontSize: "14px",
-            fontWeight: 400,
-            lineHeight: "20px",
-            letterSpacing: "0.3px",
-          },
-        },
+
         {
           props: { variant: "authLogoText" },
           style: {
@@ -107,14 +71,7 @@ const theme: Theme = createTheme({
         },
       ],
     },
-    MuiIcon: {
-      styleOverrides: {
-        fontSizeSmall: {
-          width: "48px",
-          height: "48px",
-        },
-      },
-    },
+
     MuiButton: {
       styleOverrides: {
         contained: {
