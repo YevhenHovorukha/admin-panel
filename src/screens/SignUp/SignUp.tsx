@@ -1,13 +1,12 @@
-import { Typography } from "@mui/material";
-import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
-import styled from "styled-components";
 
 import AuthInput from "../../components/AuthInput";
 import AuthCardInfo from "../../components/AuthCardInfo";
 import AuthContainer from "../../components/AuthContainer";
 import AuthCard from "../../components/AuthCard";
+import FormBox from "../../components/FormBox/FormBox";
+import FormButton from "../../components/FormButton";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
@@ -19,7 +18,7 @@ const SignUp = () => {
           mainText="Sign Up"
           additionalText="Create a new account"
         />
-        <StyledBox
+        <FormBox
           component="form"
           onSubmit={handleSubmit((data) => {
             console.log(data);
@@ -62,20 +61,13 @@ const SignUp = () => {
             label="confirm password"
           />
 
-          <Button type="submit" variant="contained" color="primary">
+          <FormButton type="submit" variant="contained" color="primary">
             Register
-          </Button>
-        </StyledBox>
+          </FormButton>
+        </FormBox>
       </AuthCard>
     </AuthContainer>
   );
 };
-
-const StyledBox = styled(Box)`
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  margin-top: 48px;
-`;
 
 export default SignUp;

@@ -9,28 +9,6 @@ const THEME: Theme = createTheme({
   typography: {
     fontFamily: "Mulish, Roboto, sans-serif",
   },
-
-  components: {
-    MuiIconButton: {
-      styleOverrides: {
-        root: {
-          marginRight: "-8px",
-        },
-      },
-    },
-
-    MuiButton: {
-      styleOverrides: {
-        contained: {
-          marginTop: "24px",
-          height: "48px",
-          width: "100%",
-          borderRadius: "8px",
-          textTransform: "none",
-        },
-      },
-    },
-  },
 });
 
 export default THEME;

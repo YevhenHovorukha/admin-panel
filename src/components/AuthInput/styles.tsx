@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { TextField, Typography, IconButton } from "@mui/material";
 import styled from "styled-components";
 
 export const StyledTextField = styled(TextField)`
@@ -20,4 +20,8 @@ export const StyledLabel = styled(Typography)`
   font-weight: 700;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+`;
+
+export const StyledIconButton = styled(IconButton)`
+  margin-right: -8px;
 `;

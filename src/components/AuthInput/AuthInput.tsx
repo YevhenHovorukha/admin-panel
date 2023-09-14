@@ -1,10 +1,9 @@
 import { useState } from "react";
-import IconButton from "@mui/material/IconButton";
 import { Box } from "@mui/system";
 
 import EyeIcon from "../../assets/logos/isVisible";
 
-import { StyledTextField, StyledLabel } from "./styles";
+import { StyledTextField, StyledLabel, StyledIconButton } from "./styles";
 
 interface IAuthInputProps {
   text: string;
@@ -36,9 +35,9 @@ const AuthInput = ({
           isPassword
             ? {
                 endAdornment: (
-                  <IconButton edge="end" onClick={handlerVisible}>
+                  <StyledIconButton edge="end" onClick={handlerVisible}>
                     <EyeIcon />
-                  </IconButton>
+                  </StyledIconButton>
                 ),
               }
             : {}
