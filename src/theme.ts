@@ -9,6 +9,7 @@ const theme: Theme = createTheme({
   typography: {
     fontFamily: "Mulish, Roboto, sans-serif",
   },
+
   components: {
     MuiCssBaseline: {
       styleOverrides: {

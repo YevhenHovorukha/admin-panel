@@ -1,5 +1,4 @@
-import { Container, Typography } from "@mui/material";
-import Card from "@mui/material/Card";
+import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
@@ -7,24 +6,19 @@ import styled from "styled-components";
 
 import AuthInput from "../../components/AuthInput";
 import AuthCardInfo from "../../components/AuthCardInfo";
-
-import { containerStyles } from "./Styles";
-
-const StyledCOntainer = styled(Container)`
-  background-color: #363740;
-`;
+import AuthContainer from "../../components/AuthContainer";
+import AuthCard from "../../components/AuthCard";
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
 
   return (
-    <StyledCOntainer sx={containerStyles}>
-      <StyledCard>
+    <AuthContainer>
+      <AuthCard>
         <AuthCardInfo
           mainText="Sign Up"
           additionalText="Create a new account"
         />
-
         <StyledBox
           component="form"
           onSubmit={handleSubmit((data) => {
@@ -76,23 +70,13 @@ const SignUp = () => {
             Register
           </Button>
         </StyledBox>
-      </StyledCard>
-    </StyledCOntainer>
+      </AuthCard>
+    </AuthContainer>
   );
 };
 
 const StyledBox = styled(Box)`
   margin-top: 48px;
-`;
-
-const StyledCard = styled(Card)`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 40px 32px;
-  width: 380px;
-  height: 794px;
 `;
 
 export default SignUp;

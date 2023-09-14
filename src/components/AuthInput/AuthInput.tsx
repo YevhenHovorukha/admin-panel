@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { Button, TextField } from "@mui/material";
-import styled from "styled-components";
+import { TextField } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
-import SVGinvisible from "../../assets/logos/isVisible";
+import styled from "styled-components";
+
+import EyeIcon from "../../assets/logos/isVisible";
 
 interface IAuthInputProps {
   text: string;
@@ -34,7 +35,7 @@ const AuthInput = ({
           ? {
               endAdornment: (
                 <IconButton edge="end" onClick={handlerVisible}>
-                  <SVGinvisible />
+                  <EyeIcon />
                 </IconButton>
               ),
             }
