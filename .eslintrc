@@ -3,6 +3,22 @@
   "rules": {
     "no-console": "warn",
     "prefer-const": "warn",
-    "indent": ["warn", 2]
+    "indent": ["warn", 2],
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index",
+          "object",
+          "type"
+        ],
+        "newlines-between": "always"
+      }
+    ]
   }
 }

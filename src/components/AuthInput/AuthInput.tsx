@@ -11,12 +11,6 @@ interface IAuthInputProps {
   isPassword?: boolean;
 }
 
-const StyledTextField = styled(TextField)`
-  padding: 0;
-  margin-top: 6px;
-  width: 100%;
-`;
-
 const AuthInput = ({
   text,
   register,
@@ -50,5 +44,11 @@ const AuthInput = ({
     />
   );
 };
+
+const StyledTextField = styled(TextField)`
+  padding: 0;
+  margin-top: 6px;
+  width: 100%;
+`;
 
 export default AuthInput;

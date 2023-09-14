@@ -1,32 +1,24 @@
 import { Container, Typography } from "@mui/material";
-import { containerStyles } from "./Styles";
 import Card from "@mui/material/Card";
 import { Box } from "@mui/system";
 import { Button } from "@mui/material";
-import { useForm, SubmitHandler } from "react-hook-form";
-import AuthInput from "../../components/AuthInput";
-import AuthCardInfo from "../../components/AuthCardInfo";
+import { useForm } from "react-hook-form";
 import styled from "styled-components";
 
-const StyledBox = styled(Box)`
-  margin-top: 48px;
-`;
+import AuthInput from "../../components/AuthInput";
+import AuthCardInfo from "../../components/AuthCardInfo";
 
-const StyledCard = styled(Card)`
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  padding: 40px 32px;
-  width: 380px;
-  height: 794px;
+import { containerStyles } from "./Styles";
+
+const StyledCOntainer = styled(Container)`
+  background-color: #363740;
 `;
 
 const SignUp = () => {
   const { register, handleSubmit } = useForm();
 
   return (
-    <Container sx={containerStyles}>
+    <StyledCOntainer sx={containerStyles}>
       <StyledCard>
         <AuthCardInfo
           mainText="Sign Up"
@@ -85,8 +77,22 @@ const SignUp = () => {
           </Button>
         </StyledBox>
       </StyledCard>
-    </Container>
+    </StyledCOntainer>
   );
 };
+
+const StyledBox = styled(Box)`
+  margin-top: 48px;
+`;
+
+const StyledCard = styled(Card)`
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px 32px;
+  width: 380px;
+  height: 794px;
+`;
 
 export default SignUp;
