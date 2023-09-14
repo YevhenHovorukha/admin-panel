@@ -25,45 +25,41 @@ const SignUp = () => {
             console.log(data);
           })}
         >
-          <Typography variant="inputLabel">email</Typography>
-
           <AuthInput
             text="Email address"
             register={register}
             registerName={"email"}
+            label="email"
           />
-
-          <Typography variant="inputLabel">First name</Typography>
 
           <AuthInput
             text="First Name"
             register={register}
             registerName={"firstName"}
+            label="First name"
           />
-
-          <Typography variant="inputLabel">LAST name</Typography>
 
           <AuthInput
             text="Last Name"
             register={register}
             registerName={"lastName"}
+            label="LAST name"
           />
-
-          <Typography variant="inputLabel">password</Typography>
 
           <AuthInput
             text="Password"
             register={register}
             registerName={"password"}
             isPassword={true}
+            label="password"
           />
-          <Typography variant="inputLabel">confirm password</Typography>
 
           <AuthInput
             text="Password"
             register={register}
             registerName={"confirmPassword"}
             isPassword={true}
+            label="confirm password"
           />
 
           <Button type="submit" variant="contained" color="primary">
@@ -76,6 +72,9 @@ const SignUp = () => {
 };
 
 const StyledBox = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   margin-top: 48px;
 `;
 
