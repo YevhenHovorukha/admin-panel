@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
 
 import AuthCard from "../../components/AuthCard";
 import AuthCardInfo from "../../components/AuthCardInfo";
@@ -6,6 +7,8 @@ import AuthContainer from "../../components/AuthContainer";
 import AuthInput from "../../components/AuthInput";
 import FormBox from "../../components/FormBox";
 import FormButton from "../../components/FormButton";
+import { StyledAdditText } from "../../components/AuthCardInfo/styled";
+import SignUpText from "../../components/SignUpText";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -42,6 +45,7 @@ const Login = () => {
             Register
           </FormButton>
         </FormBox>
+        <SignUpText />
       </AuthCard>
     </AuthContainer>
   );
