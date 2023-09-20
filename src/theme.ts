@@ -1,24 +1,14 @@
 import { createTheme, Theme } from "@mui/material/styles";
 
-const theme: Theme = createTheme({
+const THEME: Theme = createTheme({
+  palette: {
+    primary: {
+      main: "#3751FF",
+    },
+  },
   typography: {
     fontFamily: "Mulish, Roboto, sans-serif",
   },
-  components: {
-    MuiContainer: {
-      styleOverrides: {
-        root: {
-          "@media (min-width: 1200px)": {
-            maxWidth: "none",
-          },
-          "@media (min-width: 600px)": {
-            paddingLeft: "0",
-            paddingRight: "0",
-          },
-        },
-      },
-    },
-  },
 });
 
-export default theme;
+export default THEME;

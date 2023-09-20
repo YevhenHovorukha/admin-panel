@@ -1,7 +1,8 @@
 import { Box } from "@mui/system";
 import Icon from "@mui/material/Icon";
 import Typography from "@mui/material/Typography";
-import MySvgFile from "../../assets/logos/mainlogo";
+
+import MySvgFile from "../../assets/logos/menulogo";
 
 const Menu = () => {
   return (

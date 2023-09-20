@@ -1,5 +1,6 @@
 import { Container } from "@mui/material";
-import Menu from "../components/Menu";
+
+import Menu from "../../components/Menu";
 
 const MainContainer = () => {
   return (

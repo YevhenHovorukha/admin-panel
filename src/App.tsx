@@ -1,10 +1,9 @@
-import React from "react";
-import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import MainContainer from "./screens/MainContainer";
+import SignUp from "./screens/SignUp";
 
 function App() {
-  console.log(1);
   return (
     <BrowserRouter>
       <Routes>
@@ -16,6 +15,7 @@ function App() {
         </Route>
         {/* </Route> */}
         <Route path="login" element={<h1>Login</h1>} />
+        <Route path="signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>
   );
