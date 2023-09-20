@@ -18,6 +18,7 @@ export const StyledLabel = styled(Typography)`
   color: #9fa2b4;
   font-size: 12px;
   font-weight: 700;
+  height: 16px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
 `;

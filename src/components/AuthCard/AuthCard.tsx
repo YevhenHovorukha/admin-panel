@@ -8,8 +8,7 @@ const AuthCard = styled(Card)`
   margin: 0 auto;
   padding: 40px 32px;
   width: 380px;
-  min-height: 582px;
-  max-height: 794px;
+  min-height: 318px;
 `;
 
 export default AuthCard;
