@@ -1,4 +1,3 @@
-import { Button } from "@mui/material";
 import { useForm } from "react-hook-form";
 
 import AuthInput from "../../components/AuthInput";

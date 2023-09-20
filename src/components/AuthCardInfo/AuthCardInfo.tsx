@@ -6,7 +6,7 @@ import {
   StyledAdditText,
   StyledLogoText,
   StyledLogoIcon,
-} from "./styles";
+} from "./styled";
 
 interface IAuthCardInfo {
   mainText: string;

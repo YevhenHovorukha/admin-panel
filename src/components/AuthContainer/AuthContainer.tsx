@@ -1,8 +1,7 @@
-import React from "react";
 import { Container } from "@mui/material";
 import styled from "styled-components";
 
-const StyledContainer = styled(Container)`
+const AuthContainer = styled(Container)`
   background-color: #363740;
   padding: 5%;
   width: 100%;
@@ -17,13 +16,5 @@ const StyledContainer = styled(Container)`
     padding-right: 0;
   }
 `;
-
-interface IAuthContainerProps {
-  children: React.ReactNode;
-}
-
-const AuthContainer = ({ children }: IAuthContainerProps) => {
-  return <StyledContainer>{children}</StyledContainer>;
-};
 
 export default AuthContainer;

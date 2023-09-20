@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 
 import EyeIcon from "../../assets/logos/isVisible";
 
-import { StyledTextField, StyledLabel, StyledIconButton } from "./styles";
+import { StyledTextField, StyledLabel, StyledIconButton } from "./styled";
 
 interface IAuthInputProps {
   text: string;
