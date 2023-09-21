@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import MainContainer from "./screens/MainContainer";
 import SignUp from "./screens/SignUp";
+import Login from "./screens/Login";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
           <Route path="second" element={<h1>3</h1>} />
         </Route>
         {/* </Route> */}
-        <Route path="login" element={<h1>Login</h1>} />
+        <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
       </Routes>
     </BrowserRouter>

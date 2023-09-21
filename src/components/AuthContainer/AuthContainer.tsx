@@ -5,7 +5,7 @@ const AuthContainer = styled(Container)`
   background-color: #363740;
   padding: 5%;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
 
   @media (min-width: 1200px) {
     max-width: none;

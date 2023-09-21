@@ -14,6 +14,7 @@ export const StyledLogoIcon = styled(Icon)`
 `;
 
 export const StyledLogoText = styled(Typography)`
+  height: 24px;
   color: #a4a6b3;
   font-size: 19px;
   font-weight: 700;
@@ -22,6 +23,7 @@ export const StyledLogoText = styled(Typography)`
 
 export const StyledMainText = styled(Typography)`
   margin: 32px auto 0;
+  height: 30px;
   font-size: 24px;
   font-weight: 700;
   letter-spacing: 0.3px;
