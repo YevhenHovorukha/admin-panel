@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import MainContainer from "./screens/MainContainer";
 import SignUp from "./screens/SignUp";
 import Login from "./screens/Login";
+import NotFound from "./screens/NotFound";
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
           <Route path="second" element={<h1>3</h1>} />
         </Route>
         {/* </Route> */}
+
         <Route path="login" element={<Login />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );
