@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import Icon from "@mui/material/Icon";
 import Typography from "@mui/material/Typography";
 
-import MySvgFile from "../../assets/logos/menulogo";
+import { ReactComponent as MySvgFile } from "../../assets/logos/menuLogo.svg";
 
 const Menu = () => {
   return (
