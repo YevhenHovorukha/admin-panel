@@ -1,18 +1,12 @@
-import { Container } from "@mui/material";
-
 import Menu from "../../components/Menu";
+
+import { MainBox } from "./styled";
 
 const MainLayout = () => {
   return (
-    <Container
-      sx={{
-        display: "flex",
-        backgroundColor: "grey",
-        minHeight: "100vh",
-      }}
-    >
+    <MainBox>
       <Menu />
-    </Container>
+    </MainBox>
   );
 };
 
