@@ -14,8 +14,13 @@ function App() {
           {/* <Route element={<h1>Protect</h1>}> */}
           <Route path="/" element={<MainLayout />}>
             <Route index element={<h1>1</h1>} />
-            <Route path="first" element={<h1>2</h1>} />
-            <Route path="second" element={<h1>3</h1>} />
+            <Route path="/tickets" element={<h1>tickets</h1>} />
+            <Route path="/ideas" element={<h1>"/ideas"</h1>} />
+            <Route path="/contacts" element={<h1>"/contacts"</h1>} />
+            <Route path="/agents" element={<h1>"/agents"</h1>} />
+            <Route path="/articles" element={<h1>"/articles"</h1>} />
+            <Route path="/settings" element={<h1>/settings</h1>} />
+            <Route path="/subscription" element={<h1>/subscription</h1>} />
           </Route>
           {/* </Route> */}
 

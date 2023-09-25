@@ -1,8 +1,8 @@
 import { ReactComponent as MySvgFile } from "../../assets/logos/menuLogo.svg";
-import { ReactComponent as OverviewIcon } from "../../assets/logos/overview.svg";
 import MenuNavItem from "../MenuNavItem";
 
-import { LogoIcon, LogoText, MenuBox, MenuLogoBox } from "./styled";
+import { ADDITIONAL_NAV_INFO, NAV_INFO } from "./helpers";
+import { LogoIcon, LogoText, MenuBox, MenuLogoBox, StyledLine } from "./styled";
 
 const Menu = () => {
   return (
@@ -13,9 +13,25 @@ const Menu = () => {
         </LogoIcon>
         <LogoText>Dashboard Kit</LogoText>
       </MenuLogoBox>
-      <MenuNavItem to="/" text="Overview">
-        <OverviewIcon />
-      </MenuNavItem>
+      {NAV_INFO.map((item) => (
+        <MenuNavItem
+          key={item.text}
+          to={item.to}
+          text={item.text}
+          icon={item.icon}
+          activeIcon={item.activeIcon}
+        ></MenuNavItem>
+      ))}
+      <StyledLine />
+      {ADDITIONAL_NAV_INFO.map((item) => (
+        <MenuNavItem
+          key={item.text}
+          to={item.to}
+          text={item.text}
+          icon={item.icon}
+          activeIcon={item.activeIcon}
+        ></MenuNavItem>
+      ))}
     </MenuBox>
   );
 };

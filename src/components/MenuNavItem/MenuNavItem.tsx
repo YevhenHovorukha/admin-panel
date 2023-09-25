@@ -1,17 +1,25 @@
-import { ReactNode } from "react";
+import { useLocation } from "react-router-dom";
 
 import { MenuItemIcon, StyledMenuLink, MenuItemText } from "./styled";
 
 interface IMenuNavItemProp {
   to: string;
   text: string;
-  children: ReactNode;
+  icon: React.FC<React.SVGProps<SVGSVGElement>>;
+  activeIcon: React.FC<React.SVGProps<SVGSVGElement>>;
 }
 
-const MenuNavItem = ({ to, text, children }: IMenuNavItemProp) => {
+const MenuNavItem = ({
+  to,
+  text,
+  icon: Icon,
+  activeIcon: ActiveIcon,
+}: IMenuNavItemProp) => {
+  const location = useLocation();
+  const isActive = location.pathname === to;
   return (
     <StyledMenuLink to={to}>
-      <MenuItemIcon>{children}</MenuItemIcon>
+      <MenuItemIcon>{isActive ? <ActiveIcon /> : <Icon />}</MenuItemIcon>
       <MenuItemText>{text}</MenuItemText>
     </StyledMenuLink>
   );

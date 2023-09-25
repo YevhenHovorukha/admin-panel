@@ -26,3 +26,9 @@ export const LogoText = styled(Typography)`
   color: #a4a6b3;
   letter-spacing: 0.4px;
 `;
+
+export const StyledLine = styled.hr`
+  color: #dfe0eb;
+  margin: 16px 0;
+  opacity: 0.06;
+`;
