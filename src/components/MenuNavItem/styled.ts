@@ -25,6 +25,13 @@ export const MenuItemIcon = styled(Icon)`
 `;
 
 export const MenuItemText = styled(Typography)`
+  color: #a4a6b3;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+`;
+
+export const MenuActiveItemText = styled(Typography)`
   color: #dde2ff;
   font-size: 16px;
   font-weight: 400;

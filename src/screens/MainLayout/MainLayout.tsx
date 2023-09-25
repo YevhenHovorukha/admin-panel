@@ -1,15 +1,19 @@
 import { Outlet } from "react-router-dom";
 
+import Header from "../../components/Header";
 import Menu from "../../components/Menu";
 
-import { MainBox } from "./styled";
+import { MainBox, LayoutBox } from "./styled";
 
 const MainLayout = () => {
   return (
-    <MainBox>
+    <LayoutBox>
       <Menu />
-      <Outlet />
-    </MainBox>
+      <MainBox>
+        <Header />
+        <Outlet />
+      </MainBox>
+    </LayoutBox>
   );
 };
 
