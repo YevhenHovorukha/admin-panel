@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Box } from "@mui/system";
 
-import EyeIcon from "../../assets/logos/isVisible";
+import { ReactComponent as EyeIcon } from "../../assets/logos/isVisible.svg";
 
 import { StyledTextField, StyledLabel, StyledIconButton } from "./styled";
 
@@ -25,23 +25,22 @@ const AuthInput = ({
   const handlerVisible = () => {
     setIsVisible((prevState) => !prevState);
   };
+
+  const Icon = {
+    endAdornment: (
+      <StyledIconButton edge="end" onClick={handlerVisible}>
+        <EyeIcon />
+      </StyledIconButton>
+    ),
+  };
+
   return (
     <Box>
       <StyledLabel>{label}</StyledLabel>
       <StyledTextField
         placeholder={text}
         {...register(registerName)}
-        InputProps={
-          isPassword
-            ? {
-                endAdornment: (
-                  <StyledIconButton edge="end" onClick={handlerVisible}>
-                    <EyeIcon />
-                  </StyledIconButton>
-                ),
-              }
-            : {}
-        }
+        InputProps={isPassword ? Icon : {}}
         type={isVisible ? "password" : "text"}
       />
     </Box>
