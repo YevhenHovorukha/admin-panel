@@ -2,7 +2,7 @@ import { Container } from "@mui/material";
 
 import Menu from "../../components/Menu";
 
-const MainContainer = () => {
+const MainLayout = () => {
   return (
     <Container
       sx={{
@@ -16,4 +16,4 @@ const MainContainer = () => {
   );
 };
 
-export default MainContainer;
+export default MainLayout;
