@@ -14,23 +14,11 @@ const Menu = () => {
         <LogoText>Dashboard Kit</LogoText>
       </MenuLogoBox>
       {NAV_INFO.map((item) => (
-        <MenuNavItem
-          key={item.text}
-          to={item.to}
-          text={item.text}
-          icon={item.icon}
-          activeIcon={item.activeIcon}
-        ></MenuNavItem>
+        <MenuNavItem {...item} key={item.text} />
       ))}
       <StyledLine />
       {ADDITIONAL_NAV_INFO.map((item) => (
-        <MenuNavItem
-          key={item.text}
-          to={item.to}
-          text={item.text}
-          icon={item.icon}
-          activeIcon={item.activeIcon}
-        ></MenuNavItem>
+        <MenuNavItem {...item} key={item.text} />
       ))}
     </MenuBox>
   );

@@ -8,7 +8,7 @@ import { ReactComponent as ContactsIcon } from "../../assets/logos/contacts.svg"
 import { ReactComponent as ContactsActiveIcon } from "../../assets/logos/contactsActive.svg";
 import { ReactComponent as AgentsIcon } from "../../assets/logos/agents.svg";
 import { ReactComponent as AgentsActiveIcon } from "../../assets/logos/agentsActive.svg";
-import { ReactComponent as ArticlesIcon } from "../../assets/logos/settings.svg";
+import { ReactComponent as ArticlesIcon } from "../../assets/logos/articles.svg";
 import { ReactComponent as ArticlesActiveIcon } from "../../assets/logos/articlesActive.svg";
 import { ReactComponent as SettingsIcon } from "../../assets/logos/settings.svg";
 import { ReactComponent as SettingsActiveIcon } from "../../assets/logos/settingsActive.svg";
