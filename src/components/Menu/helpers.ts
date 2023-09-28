@@ -14,6 +14,7 @@ import { ReactComponent as SettingsIcon } from "../../assets/logos/settings.svg"
 import { ReactComponent as SettingsActiveIcon } from "../../assets/logos/settingsActive.svg";
 import { ReactComponent as SubscriptionIcon } from "../../assets/logos/subscription.svg";
 import { ReactComponent as SubscriptionActiveIcon } from "../../assets/logos/subscriptionActive.svg";
+import ROUTES from "../../routes";
 
 interface INavInfo {
   to: string;
@@ -24,25 +25,25 @@ interface INavInfo {
 
 export const NAV_INFO: INavInfo[] = [
   {
-    to: "/",
+    to: ROUTES.HOME,
     text: "Overview",
     icon: OverviewIcon,
     activeIcon: OverviewActiveIcon,
   },
   {
-    to: "/tickets",
+    to: ROUTES.TICKETS,
     text: "Tickets",
     icon: TicketsIcon,
     activeIcon: TicketsActiveIcon,
   },
   {
-    to: "/ideas",
+    to: ROUTES.IDEAS,
     text: "Ideas",
     icon: IdeasIcon,
     activeIcon: IdeasActiveIcon,
   },
   {
-    to: "/contacts",
+    to: ROUTES.CONTACTS,
     text: "Contacts",
     icon: ContactsIcon,
     activeIcon: ContactsActiveIcon,
