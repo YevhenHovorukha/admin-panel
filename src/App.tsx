@@ -1,28 +1,32 @@
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import MainContainer from "./screens/MainContainer";
-import SignUp from "./screens/SignUp";
-import Login from "./screens/Login";
-import NotFound from "./screens/NotFound";
+import ROUTES from "./routes";
 
-function App() {
+const MainLayout = lazy(() => import("./screens/MainLayout"));
+const SignUp = lazy(() => import("./screens/SignUp"));
+const Login = lazy(() => import("./screens/Login"));
+const NotFound = lazy(() => import("./screens/NotFound"));
+
+const App = () => {
   return (
     <BrowserRouter>
-      <Routes>
-        {/* <Route element={<h1>Protect</h1>}> */}
-        <Route path="/" element={<MainContainer />}>
-          <Route index element={<h1>1</h1>} />
-          <Route path="first" element={<h1>2</h1>} />
-          <Route path="second" element={<h1>3</h1>} />
-        </Route>
-        {/* </Route> */}
+      <Suspense fallback={<h1>...Loading</h1>}>
+        <Routes>
+          <Route path={ROUTES.HOME} element={<MainLayout />}>
+            <Route index element={<h1>1</h1>} />
+            <Route path={ROUTES.TICKETS} element={<h1>tickets</h1>} />
+            <Route path={ROUTES.IDEAS} element={<h1>"/ideas"</h1>} />
+            <Route path={ROUTES.CONTACTS} element={<h1>"/contacts"</h1>} />
+          </Route>
 
-        <Route path="login" element={<Login />} />
-        <Route path="signup" element={<SignUp />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path={ROUTES.LOGIN} element={<Login />} />
+          <Route path={ROUTES.SIGNUP} element={<SignUp />} />
+          <Route path={ROUTES.ERRORPAGE} element={<NotFound />} />
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

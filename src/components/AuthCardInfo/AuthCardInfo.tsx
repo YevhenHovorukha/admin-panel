@@ -1,4 +1,4 @@
-import MainLogo from "../../assets/logos/authLogo";
+import { ReactComponent as MainLogo } from "../../assets/logos/authLogo.svg";
 
 import {
   StyledBox,
