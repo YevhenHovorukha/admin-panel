@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ROUTES from "./routes";
 
+const ContactsTable = lazy(() => import("./screens/ContactsTable"));
 const MainLayout = lazy(() => import("./screens/MainLayout"));
 const SignUp = lazy(() => import("./screens/SignUp"));
 const Login = lazy(() => import("./screens/Login"));
@@ -17,7 +18,7 @@ const App = () => {
             <Route index element={<h1>1</h1>} />
             <Route path={ROUTES.TICKETS} element={<h1>tickets</h1>} />
             <Route path={ROUTES.IDEAS} element={<h1>"/ideas"</h1>} />
-            <Route path={ROUTES.CONTACTS} element={<h1>"/contacts"</h1>} />
+            <Route path={ROUTES.CONTACTS} element={<ContactsTable />} />
           </Route>
 
           <Route path={ROUTES.LOGIN} element={<Login />} />
