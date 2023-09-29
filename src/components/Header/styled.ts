@@ -1,7 +1,7 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import styled from "styled-components";
 
-export const HeaderBox = styled(Box)`
+export const HeaderBox = styled.header`
   display: flex;
   aligh-items: center;
 `;
