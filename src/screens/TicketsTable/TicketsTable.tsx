@@ -185,7 +185,7 @@ const CellText = ({
   );
 };
 
-const ContactsTable = () => {
+const TicketsTable = () => {
   return (
     <TableContainer component={Paper}>
       <PreHeaderBox>
@@ -243,4 +243,4 @@ const ContactsTable = () => {
   );
 };
 
-export default ContactsTable;
+export default TicketsTable;
