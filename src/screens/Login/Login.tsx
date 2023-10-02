@@ -1,14 +1,13 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
 import AuthCard from "../../components/AuthCard";
 import AuthCardInfo from "../../components/AuthCardInfo";
 import AuthContainer from "../../components/AuthContainer";
-import AuthInput from "../../components/AuthInput";
 import FormBox from "../../components/FormBox";
 import FormButton from "../../components/FormButton";
-import { StyledAdditText } from "../../components/AuthCardInfo/styled";
 import SignUpText from "../../components/SignUpText";
+import StandardInput from "../../components/Inputs/StandardInput";
+import PasswordInput from "../../components/Inputs/PasswordInput";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -26,18 +25,17 @@ const Login = () => {
             console.log(data);
           })}
         >
-          <AuthInput
+          <StandardInput
             text="Email address"
             register={register}
             registerName={"email"}
             label="email"
           />
 
-          <AuthInput
+          <PasswordInput
             text="Password"
             register={register}
             registerName={"password"}
-            isPassword={true}
             label="password"
           />
 

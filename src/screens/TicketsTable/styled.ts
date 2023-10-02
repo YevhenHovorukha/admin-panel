@@ -1,12 +1,25 @@
 import { Box } from "@mui/material";
 import styled from "styled-components";
 
-export const PriorityBoxRed = styled(Box)`
-  height: 24px;
-  width: 54px;
+interface IColorsObj {
+  red: string;
+  yellow: string;
+  green: string;
+}
 
+const colorsObj: IColorsObj = {
+  red: "#f12b2c",
+  yellow: "#fec400",
+  green: "#29cc97",
+};
+
+export const PriorityBox = styled(Box)<{
+  backgroundcolor: keyof IColorsObj;
+}>`
+  height: 24px;
+  width: ${(props) => (props.backgroundcolor === "green" ? "76px" : "54px")};
   border-radius: 100px;
-  background: #f12b2c;
+  background: ${(props) => colorsObj[props.backgroundcolor || "red"]};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,13 +28,4 @@ export const PriorityBoxRed = styled(Box)`
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-`;
-
-export const PriorityBoxYellow = styled(PriorityBoxRed)`
-  background: #fec400;
-`;
-
-export const PriorityBoxGreen = styled(PriorityBoxRed)`
-  background: #29cc97;
-  width: 76px;
 `;

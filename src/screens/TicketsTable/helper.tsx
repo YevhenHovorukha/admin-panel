@@ -1,13 +1,7 @@
-import { PriorityBoxRed, PriorityBoxYellow, PriorityBoxGreen } from "./styled";
-
-interface IPriorityObj {
-  low: JSX.Element;
-  high: JSX.Element;
-  normal: JSX.Element;
-}
+import { PriorityBox } from "./styled";
 
 export const priorityMarkers = {
-  low: <PriorityBoxYellow>Low</PriorityBoxYellow>,
-  high: <PriorityBoxRed>high</PriorityBoxRed>,
-  normal: <PriorityBoxGreen>normal</PriorityBoxGreen>,
+  low: <PriorityBox backgroundcolor="yellow">Low</PriorityBox>,
+  high: <PriorityBox backgroundcolor="red">high</PriorityBox>,
+  normal: <PriorityBox backgroundcolor="green">normal</PriorityBox>,
 };

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -8,6 +9,7 @@ import Paper from "@mui/material/Paper";
 import { TablePagination, Box, Typography } from "@mui/material";
 import styled from "styled-components";
 
+import TicketsModal from "../../components/TicketsModal";
 import { ReactComponent as FilterIcon } from "../../assets/logos/filter.svg";
 import { ReactComponent as SortIcon } from "../../assets/logos/sort.svg";
 import { ReactComponent as MoreIcon } from "../../assets/logos/more.svg";
@@ -77,6 +79,26 @@ const StyledTable = styled(Table)`
   min-width: 1122px;
 `;
 
+interface ICellObj {
+  first: string;
+  second: string;
+  third: string;
+  fourth: string;
+  fifth: string;
+}
+
+const cellObj: ICellObj = {
+  first: "512px",
+  second: "248px",
+  third: "180px",
+  fourth: "104px",
+  fifth: "77px",
+};
+
+const StyledCell = styled(TableCell)<{ cellWidth: keyof ICellObj }>`
+  min-width: ${(props) => cellObj[props.cellWidth]};
+`;
+
 const FirstCell = styled(TableCell)`
   min-width: 512px;
 `;
@@ -114,18 +136,13 @@ const BodyRow = styled(TableRow)`
   & > td {
     border-bottom: 2px solid #dfe0eb;
     padding: 24px 0;
+    box-sizing: border-box;
   }
 
   & td:first-child {
-    padding: 24px 40px 24px 32px;
+    padding: 20px 40px 22px 32px;
   }
 
-  &:last-child {
-    td,
-    th {
-      border: 0;
-    }
-  }
   &:hover {
     background: rgba(55, 81, 255, 0.04);
   }
@@ -153,22 +170,24 @@ const CellTextBox = styled(Box)`
   gap: 4px;
 `;
 
-const PriorityBox = styled(Box)`
+const UserBox = styled(Box)`
   display: flex;
-  justify-content: center;
+  gap: 20px;
   align-items: center;
-
-  height: 24px;
-  min-width: 54px;
-  max-width: 76px;
-  border-radius: 100px;
-  background: #f12b2c;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
 `;
+
+const StyledPagination = styled(TablePagination)`
+  height: 72px;
+  overflow: hidden;
+  color: #9fa2b4;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0.3px;
+  &:last-child {
+    padding: 10px 20px 24px;
+  }
+` as typeof TablePagination;
 
 const CellText = ({
   main,
@@ -186,60 +205,93 @@ const CellText = ({
 };
 
 const TicketsTable = () => {
+  const [page, setPage] = useState(2);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleChangePage = (
+    event: React.MouseEvent<HTMLButtonElement> | null,
+    newPage: number
+  ) => {
+    setPage(newPage);
+  };
+
+  const handleChangeRowsPerPage = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setRowsPerPage(parseInt(event.target.value, 10));
+    setPage(0);
+  };
+
   return (
-    <TableContainer component={Paper}>
-      <PreHeaderBox>
-        <SortAndFilterBox>
-          <SortAndFilterItem>
-            <SortIcon />
-            <SortAndFilterItemText>Sort</SortAndFilterItemText>
-          </SortAndFilterItem>
-          <SortAndFilterItem>
-            <FilterIcon />
-            <SortAndFilterItemText>Filter</SortAndFilterItemText>
-          </SortAndFilterItem>
-        </SortAndFilterBox>
-        <AddContactText>+ &nbsp;Add contact</AddContactText>
-      </PreHeaderBox>
-      <StyledTable aria-label="simple table">
-        <TableHead>
-          <HeadRow>
-            <FirstCell align="left">Ticket details</FirstCell>
-            <SecondCell align="left">Customer name</SecondCell>
-            <ThirtCell align="left">Date</ThirtCell>
-            <FourthCell align="left">Priority</FourthCell>
-            <FifthCell align="left"></FifthCell>
-          </HeadRow>
-        </TableHead>
-        <TableBody>
-          {rows.map((row) => (
-            <BodyRow key={row.name}>
-              <TableCell align="left">
-                <Box
-                  sx={{ display: "flex", gap: "20px", alignItems: "center" }}
-                >
-                  <UserPhoto src={UserImage} alt="userPhoto" />
-                  <CellText
-                    main="Contact Email not Linked"
-                    additional="Updated 1 day ago"
-                  />
-                </Box>
-              </TableCell>
-              <TableCell align="left">
-                <CellText main="Tom Cruise" additional="on 24.05.2019" />
-              </TableCell>
-              <TableCell align="left">
-                <CellText main="May 26, 2019" additional="6:30 PM" />
-              </TableCell>
-              <TableCell align="left">{priorityMarkers["low"]}</TableCell>
-              <TableCell align="center">
-                <MoreIcon />
-              </TableCell>
-            </BodyRow>
-          ))}
-        </TableBody>
-      </StyledTable>
-    </TableContainer>
+    <>
+      <TableContainer component={Paper}>
+        <PreHeaderBox>
+          <SortAndFilterBox>
+            <SortAndFilterItem>
+              <SortIcon />
+              <SortAndFilterItemText>Sort</SortAndFilterItemText>
+            </SortAndFilterItem>
+            <SortAndFilterItem>
+              <FilterIcon />
+              <SortAndFilterItemText>Filter</SortAndFilterItemText>
+            </SortAndFilterItem>
+          </SortAndFilterBox>
+          <AddContactText onClick={handleOpen}>
+            + &nbsp;Add contact
+          </AddContactText>
+        </PreHeaderBox>
+        <StyledTable aria-label="simple table">
+          <TableHead>
+            <HeadRow>
+              <FirstCell align="left">Ticket details</FirstCell>
+              <SecondCell align="left">Customer name</SecondCell>
+              <ThirtCell align="left">Date</ThirtCell>
+              <FourthCell align="left">Priority</FourthCell>
+              <FifthCell align="left"></FifthCell>
+            </HeadRow>
+          </TableHead>
+          <TableBody>
+            {rows.map((row) => (
+              <BodyRow key={row.name}>
+                <TableCell align="left">
+                  <UserBox>
+                    <UserPhoto src={UserImage} alt="userPhoto" />
+                    <CellText
+                      main="Contact Email not Linked"
+                      additional="Updated 1 day ago"
+                    />
+                  </UserBox>
+                </TableCell>
+                <TableCell align="left">
+                  <CellText main="Tom Cruise" additional="on 24.05.2019" />
+                </TableCell>
+                <TableCell align="left">
+                  <CellText main="May 26, 2019" additional="6:30 PM" />
+                </TableCell>
+                <TableCell align="left">{priorityMarkers["high"]}</TableCell>
+                <TableCell align="center">
+                  <MoreIcon />
+                </TableCell>
+              </BodyRow>
+            ))}
+          </TableBody>
+        </StyledTable>
+        <StyledPagination
+          rowsPerPageOptions={[5, 10, 25]}
+          component="div"
+          count={1240}
+          rowsPerPage={rowsPerPage}
+          page={page}
+          onPageChange={handleChangePage}
+          onRowsPerPageChange={handleChangeRowsPerPage}
+        />
+      </TableContainer>
+      <TicketsModal open={open} handleClose={handleClose} />
+    </>
   );
 };
 

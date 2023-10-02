@@ -7,6 +7,14 @@ export const StyledTextField = styled(TextField)`
   height: 42px;
   width: 100%;
 
+  input[type="date"] {
+    color: #9fa2b4;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.7);
+  }
+
   input {
     height: 42px;
     padding: 0 16px;
@@ -21,8 +29,4 @@ export const StyledLabel = styled(Typography)`
   height: 16px;
   letter-spacing: 0.3px;
   text-transform: uppercase;
-`;
-
-export const StyledIconButton = styled(IconButton)`
-  margin-right: -8px;
 `;

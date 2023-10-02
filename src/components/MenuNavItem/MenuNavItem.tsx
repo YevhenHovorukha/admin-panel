@@ -22,7 +22,7 @@ const MenuNavItem = ({
   return (
     <StyledMenuLink to={to}>
       <MenuItemIcon>{isActive ? <ActiveIcon /> : <Icon />}</MenuItemIcon>
-      <MenuItemText isActive={isActive}>{text}</MenuItemText>
+      <MenuItemText $isActive={isActive}>{text}</MenuItemText>
     </StyledMenuLink>
   );
 };

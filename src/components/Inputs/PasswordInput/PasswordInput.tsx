@@ -1,25 +1,24 @@
 import { useState } from "react";
 import { Box } from "@mui/system";
 
-import { ReactComponent as EyeIcon } from "../../assets/logos/isVisible.svg";
+import { ReactComponent as EyeIcon } from "../../../assets/logos/isVisible.svg";
+import { StyledLabel, StyledTextField } from "../StandardInput/styled";
 
-import { StyledTextField, StyledLabel, StyledIconButton } from "./styled";
+import { StyledIconButton } from "./styled";
 
-interface IAuthInputProps {
+interface IPasswordInputProps {
   text: string;
   registerName: string;
   label: string;
   register: (registerName: string) => {};
-  isPassword?: boolean;
 }
 
-const AuthInput = ({
+const PasswordInput = ({
   text,
   register,
   label,
   registerName,
-  isPassword = false,
-}: IAuthInputProps) => {
+}: IPasswordInputProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handlerVisible = () => {
@@ -40,11 +39,11 @@ const AuthInput = ({
       <StyledTextField
         placeholder={text}
         {...register(registerName)}
-        InputProps={isPassword ? Icon : {}}
-        type={isVisible ? "password" : "text"}
+        InputProps={Icon}
+        type={isVisible ? "text" : "password"}
       />
     </Box>
   );
 };
 
-export default AuthInput;
+export default PasswordInput;
