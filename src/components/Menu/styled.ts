@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import Icon from "@mui/material/Icon";
 
-export const MenuBox = styled(Box)`
+export const MenuBox = styled.nav`
   background-color: #363740;
   width: 255px;
   height: 100vh;

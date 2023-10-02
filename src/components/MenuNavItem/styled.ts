@@ -24,15 +24,8 @@ export const MenuItemIcon = styled(Icon)`
   height: 16px;
 `;
 
-export const MenuItemText = styled(Typography)`
-  color: #a4a6b3;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.2px;
-`;
-
-export const MenuActiveItemText = styled(Typography)`
-  color: #dde2ff;
+export const MenuItemText = styled(Typography)<{ $isActive?: boolean }>`
+  color: ${(props) => (props.$isActive ? "#dde2ff" : "#a4a6b3")};
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.2px;

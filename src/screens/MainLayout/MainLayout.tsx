@@ -11,7 +11,9 @@ const MainLayout = () => {
       <Menu />
       <MainBox>
         <Header />
-        <Outlet />
+        <main>
+          <Outlet />
+        </main>
       </MainBox>
     </LayoutBox>
   );

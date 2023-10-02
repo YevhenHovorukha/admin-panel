@@ -1,11 +1,6 @@
 import { useLocation } from "react-router-dom";
 
-import {
-  MenuItemIcon,
-  StyledMenuLink,
-  MenuItemText,
-  MenuActiveItemText,
-} from "./styled";
+import { MenuItemIcon, StyledMenuLink, MenuItemText } from "./styled";
 
 interface IMenuNavItemProp {
   to: string;
@@ -27,11 +22,7 @@ const MenuNavItem = ({
   return (
     <StyledMenuLink to={to}>
       <MenuItemIcon>{isActive ? <ActiveIcon /> : <Icon />}</MenuItemIcon>
-      {isActive ? (
-        <MenuActiveItemText>{text}</MenuActiveItemText>
-      ) : (
-        <MenuItemText>{text}</MenuItemText>
-      )}
+      <MenuItemText $isActive={isActive}>{text}</MenuItemText>
     </StyledMenuLink>
   );
 };
