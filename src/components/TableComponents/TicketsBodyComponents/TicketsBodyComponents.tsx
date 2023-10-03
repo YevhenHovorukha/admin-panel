@@ -7,10 +7,21 @@ import { ReactComponent as MoreIcon } from "../../../assets/logos/more.svg";
 import { BodyRow, UserBox, UserPhoto } from "./styled";
 import { priorityMarkers } from "./helper";
 
-const TicketsBodyComponents = () => {
+interface ITicketsBodyComponents {
+  page: number;
+  rowsPerPage: number;
+}
+
+const TicketsBodyComponents = ({
+  page,
+  rowsPerPage,
+}: ITicketsBodyComponents) => {
   return (
     <TableBody>
-      {TICKETS_DATA.map((row) => (
+      {TICKETS_DATA.slice(
+        page * rowsPerPage,
+        page * rowsPerPage + rowsPerPage
+      ).map((row) => (
         <BodyRow key={`${Math.random()} ${Math.random()}`}>
           <TableCell align="left">
             <UserBox>

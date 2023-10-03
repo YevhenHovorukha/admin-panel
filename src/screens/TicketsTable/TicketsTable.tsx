@@ -1,34 +1,17 @@
 import { useState } from "react";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
-import { TablePagination, Box, Typography } from "@mui/material";
-import styled from "styled-components";
+import { TableContainer, Paper } from "@mui/material";
 
 import TicketsModal from "../../components/TicketsModal";
 import PreHeaderBox from "../../components/TableComponents/PreHeaderBox";
 import HeadComponents from "../../components/TableComponents/HeadComponents";
 import TicketsBodyComponents from "../../components/TableComponents/TicketsBodyComponents";
+import { TICKETS_DATA } from "../../constants";
 
-import { StyledTable } from "./styled";
-
-const StyledPagination = styled(TablePagination)`
-  height: 72px;
-  overflow: hidden;
-  color: #9fa2b4;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0.3px;
-  &:last-child {
-    padding: 10px 20px 24px;
-  }
-` as typeof TablePagination;
+import { StyledTable, StyledPagination } from "./styled";
 
 const TicketsTable = () => {
-  const [page, setPage] = useState(2);
-  const [rowsPerPage, setRowsPerPage] = useState(10);
+  const [page, setPage] = useState(0);
+  const [rowsPerPage, setRowsPerPage] = useState(5);
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => setOpen(true);
@@ -53,22 +36,21 @@ const TicketsTable = () => {
       <TableContainer component={Paper}>
         <PreHeaderBox handleOpen={handleOpen} />
         <StyledTable aria-label="simple table">
-          <TableHead>
-            <HeadComponents
-              columnsNames={[
-                "Ticket details",
-                "Customer name",
-                "Date",
-                "Priority",
-              ]}
-            />
-          </TableHead>
-          <TicketsBodyComponents />
+          <HeadComponents
+            columnsNames={[
+              "Ticket details",
+              "Customer name",
+              "Date",
+              "Priority",
+            ]}
+          />
+
+          <TicketsBodyComponents page={page} rowsPerPage={rowsPerPage} />
         </StyledTable>
         <StyledPagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={1240}
+          count={TICKETS_DATA.length}
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}
