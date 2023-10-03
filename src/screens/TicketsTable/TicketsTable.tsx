@@ -14,6 +14,7 @@ import { ReactComponent as FilterIcon } from "../../assets/logos/filter.svg";
 import { ReactComponent as SortIcon } from "../../assets/logos/sort.svg";
 import { ReactComponent as MoreIcon } from "../../assets/logos/more.svg";
 import UserImage from "../../assets/images/UserImage.png";
+import { TICKETS_DATA } from "../../constants";
 
 import { priorityMarkers } from "./helper";
 
@@ -95,26 +96,8 @@ const cellObj: ICellObj = {
   fifth: "77px",
 };
 
-const StyledCell = styled(TableCell)<{ cellWidth: keyof ICellObj }>`
-  min-width: ${(props) => cellObj[props.cellWidth]};
-`;
-
-const FirstCell = styled(TableCell)`
-  min-width: 512px;
-`;
-
-const SecondCell = styled(TableCell)`
-  min-width: 248px;
-`;
-const ThirtCell = styled(TableCell)`
-  min-width: 180px;
-`;
-const FourthCell = styled(TableCell)`
-  min-width: 104px;
-`;
-
-const FifthCell = styled(TableCell)`
-  min-width: 77px;
+const StyledCell = styled(TableCell)<{ $cellWidth: keyof ICellObj }>`
+  min-width: ${(props) => cellObj[props.$cellWidth]};
 `;
 
 const HeadRow = styled(TableRow)`
@@ -247,32 +230,45 @@ const TicketsTable = () => {
         <StyledTable aria-label="simple table">
           <TableHead>
             <HeadRow>
-              <FirstCell align="left">Ticket details</FirstCell>
-              <SecondCell align="left">Customer name</SecondCell>
-              <ThirtCell align="left">Date</ThirtCell>
-              <FourthCell align="left">Priority</FourthCell>
-              <FifthCell align="left"></FifthCell>
+              <StyledCell $cellWidth="first" align="left">
+                Ticket details
+              </StyledCell>
+              <StyledCell $cellWidth="second" align="left">
+                Customer name
+              </StyledCell>
+              <StyledCell $cellWidth="third" align="left">
+                Date
+              </StyledCell>
+              <StyledCell $cellWidth="fourth" align="left">
+                Priority
+              </StyledCell>
+              <StyledCell $cellWidth="fifth" align="left"></StyledCell>
             </HeadRow>
           </TableHead>
           <TableBody>
-            {rows.map((row) => (
-              <BodyRow key={row.name}>
+            {TICKETS_DATA.map((row) => (
+              <BodyRow key={`${Math.random()} ${Math.random()}`}>
                 <TableCell align="left">
                   <UserBox>
-                    <UserPhoto src={UserImage} alt="userPhoto" />
+                    <UserPhoto src={row.image} alt="userPhoto" />
                     <CellText
-                      main="Contact Email not Linked"
-                      additional="Updated 1 day ago"
+                      main={row.details.text}
+                      additional={`Updated ${row.details.updated} day ago`}
                     />
                   </UserBox>
                 </TableCell>
                 <TableCell align="left">
-                  <CellText main="Tom Cruise" additional="on 24.05.2019" />
+                  <CellText
+                    main={row.name.customerName}
+                    additional={`on ${row.name.on}`}
+                  />
                 </TableCell>
                 <TableCell align="left">
-                  <CellText main="May 26, 2019" additional="6:30 PM" />
+                  <CellText main={row.date.day} additional={row.date.time} />
                 </TableCell>
-                <TableCell align="left">{priorityMarkers["high"]}</TableCell>
+                <TableCell align="left">
+                  {priorityMarkers[row.priority]}
+                </TableCell>
                 <TableCell align="center">
                   <MoreIcon />
                 </TableCell>

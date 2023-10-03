@@ -6,6 +6,7 @@ import StandardInput from "../Inputs/StandardInput";
 import FormButton from "../FormButton";
 import DateInput from "../Inputs/DateInput";
 import FormSelect from "../Inputs/FormSelect/FormSelect";
+import { CONTACTS_DATA } from "../../constants";
 
 import { CancelText, MainModalText, ModalBox } from "./styled";
 
@@ -16,6 +17,7 @@ interface ITicketsModalProps {
 
 const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
   const { register, handleSubmit } = useForm();
+  console.log(CONTACTS_DATA);
   return (
     <Modal open={open} onClose={handleClose}>
       <ModalBox>
