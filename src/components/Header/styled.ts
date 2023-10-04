@@ -3,7 +3,6 @@ import styled from "styled-components";
 
 export const HeaderBox = styled.header`
   margin-bottom: 58px;
-
   display: flex;
   aligh-items: center;
 `;

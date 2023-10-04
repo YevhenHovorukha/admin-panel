@@ -18,6 +18,7 @@ interface ITicketsModalProps {
 const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
   const { register, handleSubmit } = useForm();
   console.log(CONTACTS_DATA);
+
   return (
     <Modal open={open} onClose={handleClose}>
       <ModalBox>
