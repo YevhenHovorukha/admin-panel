@@ -1,28 +1,32 @@
 import { TableHead } from "@mui/material";
 
-import { HeadRow, StyledHeadCell } from "./styled";
+import { HeadRow, ICellObj, StyledHeadCell } from "./styled";
 
 interface IHeadComponentsProps {
-  columnsNames: [string, string, string, string];
+  columnsNames: string[];
 }
 
 const HeadComponents = ({ columnsNames }: IHeadComponentsProps) => {
+  const CellWidthArray: (keyof ICellObj)[] = [
+    "first",
+    "second",
+    "third",
+    "fourth",
+    "fifth",
+  ];
+
   return (
     <TableHead>
       <HeadRow>
-        <StyledHeadCell $cellWidth="first" align="left">
-          {columnsNames[0]}
-        </StyledHeadCell>
-        <StyledHeadCell $cellWidth="second" align="left">
-          {columnsNames[1]}
-        </StyledHeadCell>
-        <StyledHeadCell $cellWidth="third" align="left">
-          {columnsNames[2]}
-        </StyledHeadCell>
-        <StyledHeadCell $cellWidth="fourth" align="left">
-          {columnsNames[3]}
-        </StyledHeadCell>
-        <StyledHeadCell $cellWidth="fifth" align="left"></StyledHeadCell>
+        {columnsNames.map((item, index) => (
+          <StyledHeadCell
+            key={item}
+            $cellWidth={CellWidthArray[index] || "fifth"}
+            align="left"
+          >
+            {item}
+          </StyledHeadCell>
+        ))}
       </HeadRow>
     </TableHead>
   );

@@ -1,7 +1,7 @@
 import { TableBody, TableCell } from "@mui/material";
 
 import CellTextItem from "../CellTextItem";
-import { TICKETS_DATA } from "../../../constants";
+import { TICKETS_DATA } from "../../../constants/mocks";
 import { ReactComponent as MoreIcon } from "../../../assets/logos/more.svg";
 
 import { BodyRow, UserBox, UserPhoto } from "./styled";
@@ -16,32 +16,36 @@ const TicketsBodyComponents = ({
   page,
   rowsPerPage,
 }: ITicketsBodyComponents) => {
+  const tableData = TICKETS_DATA.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
+
   return (
     <TableBody>
-      {TICKETS_DATA.slice(
-        page * rowsPerPage,
-        page * rowsPerPage + rowsPerPage
-      ).map((row) => (
+      {tableData.map((rowData) => (
         <BodyRow key={`${Math.random()} ${Math.random()}`}>
           <TableCell align="left">
             <UserBox>
-              <UserPhoto src={row.image} alt="userPhoto" />
+              <UserPhoto src={rowData.image} alt="userPhoto" />
               <CellTextItem
-                main={row.details.text}
-                additional={`Updated ${row.details.updated} day ago`}
+                title={rowData.details.text}
+                info={`Updated ${rowData.details.updated} day ago`}
               />
             </UserBox>
           </TableCell>
           <TableCell align="left">
             <CellTextItem
-              main={row.name.customerName}
-              additional={`on ${row.name.on}`}
+              title={rowData.name.customerName}
+              info={`on ${rowData.name.on}`}
             />
           </TableCell>
           <TableCell align="left">
-            <CellTextItem main={row.date.day} additional={row.date.time} />
+            <CellTextItem title={rowData.date.day} info={rowData.date.time} />
           </TableCell>
-          <TableCell align="left">{priorityMarkers[row.priority]}</TableCell>
+          <TableCell align="left">
+            {priorityMarkers[rowData.priority]}
+          </TableCell>
           <TableCell align="center">
             <MoreIcon />
           </TableCell>

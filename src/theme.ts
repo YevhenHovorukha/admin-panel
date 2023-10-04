@@ -8,6 +8,7 @@ export const COLORS = {
   MIDDLE_GRAY: "#A4A6B3",
   LIGHT_GRAY: "#dfe0eb",
   DARK_GRAY: "#4B506D",
+  INFO_GRAY: "#C5C7CD",
   RED: "#F12B2C",
   YELLOW: "#FEC400",
   GREEN: "#29CC97",
@@ -41,6 +42,7 @@ export const SIZES = {
   },
   LINE_HEIGHT: {
     LH20: "20px",
+    LH16: "16px",
   },
 };
 

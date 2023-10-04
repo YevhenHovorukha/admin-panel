@@ -1,15 +1,15 @@
-import { CellTextBox, CellTextMain, CellTextAdd } from "./styled";
+import { CellTextBox, CellTextTitle, CellTextInfo } from "./styled";
 
 interface ICellTextItemProps {
-  main: string;
-  additional: string;
+  title: string;
+  info: string;
 }
 
-const CellTextItem = ({ main, additional }: ICellTextItemProps) => {
+const CellTextItem = ({ title, info }: ICellTextItemProps) => {
   return (
     <CellTextBox>
-      <CellTextMain>{main}</CellTextMain>
-      <CellTextAdd>{additional}</CellTextAdd>
+      <CellTextTitle>{title}</CellTextTitle>
+      <CellTextInfo>{info}</CellTextInfo>
     </CellTextBox>
   );
 };

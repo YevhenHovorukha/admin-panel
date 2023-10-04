@@ -1,6 +1,6 @@
-import userImage from "./assets/images/UserImage.png";
-import userImage2 from "./assets/images/User2Image.png";
-import userImage3 from "./assets/images/User3image.png";
+import userImage from "../assets/images/UserImage.png";
+import userImage2 from "../assets/images/User2Image.png";
+import userImage3 from "../assets/images/User3image.png";
 
 interface ITicketData {
   image: string;

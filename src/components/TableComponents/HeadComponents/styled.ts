@@ -18,7 +18,7 @@ export const HeadRow = styled(TableRow)`
   }
 `;
 
-interface ICellObj {
+export interface ICellObj {
   first: string;
   second: string;
   third: string;
