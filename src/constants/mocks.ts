@@ -1,8 +1,11 @@
+import uniqid from "uniqid";
+
 import userImage from "../assets/images/UserImage.png";
 import userImage2 from "../assets/images/User2Image.png";
 import userImage3 from "../assets/images/User3image.png";
 
 interface ITicketData {
+  id: string;
   image: string;
   details: { text: string; updated: number };
   name: { customerName: string; on: string };
@@ -12,6 +15,7 @@ interface ITicketData {
 
 export const TICKETS_DATA: ITicketData[] = [
   {
+    id: uniqid(),
     image: userImage,
     details: { text: "Contact Email not Linked", updated: 1 },
     name: { customerName: "Tom Cruise", on: "24.05.2019" },
@@ -20,6 +24,7 @@ export const TICKETS_DATA: ITicketData[] = [
   },
 
   {
+    id: uniqid(),
     image: userImage2,
     details: { text: "Adding Images to Featured Posts", updated: 1 },
     name: { customerName: "Matt Damon", on: "24.05.2019" },
@@ -27,6 +32,7 @@ export const TICKETS_DATA: ITicketData[] = [
     priority: "low",
   },
   {
+    id: uniqid(),
     image: userImage3,
     details: { text: "When will I be charged this month?", updated: 1 },
     name: { customerName: "Robert Downey", on: "24.05.2019" },
@@ -34,6 +40,7 @@ export const TICKETS_DATA: ITicketData[] = [
     priority: "normal",
   },
   {
+    id: uniqid(),
     image: userImage,
     details: { text: "Contact Email not Linked", updated: 1 },
     name: { customerName: "Tom Cruise", on: "24.05.2019" },
@@ -42,6 +49,7 @@ export const TICKETS_DATA: ITicketData[] = [
   },
 
   {
+    id: uniqid(),
     image: userImage2,
     details: { text: "Adding Images to Featured Posts", updated: 1 },
     name: { customerName: "Matt Damon", on: "24.05.2019" },
@@ -49,6 +57,7 @@ export const TICKETS_DATA: ITicketData[] = [
     priority: "low",
   },
   {
+    id: uniqid(),
     image: userImage3,
     details: { text: "When will I be charged this month?", updated: 1 },
     name: { customerName: "Robert Downey", on: "24.05.2019" },
@@ -56,6 +65,7 @@ export const TICKETS_DATA: ITicketData[] = [
     priority: "normal",
   },
   {
+    id: uniqid(),
     image: userImage,
     details: { text: "Contact Email not Linked", updated: 1 },
     name: { customerName: "Tom Cruise", on: "24.05.2019" },
@@ -64,6 +74,7 @@ export const TICKETS_DATA: ITicketData[] = [
   },
 
   {
+    id: uniqid(),
     image: userImage2,
     details: { text: "Adding Images to Featured Posts", updated: 1 },
     name: { customerName: "Matt Damon", on: "24.05.2019" },
@@ -71,6 +82,7 @@ export const TICKETS_DATA: ITicketData[] = [
     priority: "low",
   },
   {
+    id: uniqid(),
     image: userImage3,
     details: { text: "When will I be charged this month?", updated: 1 },
     name: { customerName: "Robert Downey", on: "24.05.2019" },
@@ -104,6 +116,7 @@ function formatCurrentDate() {
 }
 
 interface IContactData {
+  id: string;
   image: string;
   name: string;
   email: string;
@@ -113,6 +126,7 @@ interface IContactData {
 
 export const CONTACTS_DATA: IContactData[] = [
   {
+    id: uniqid(),
     image: userImage,
     name: "Mandeep Walton",
     email: "mandeep.walton@gmail.com",
@@ -120,6 +134,7 @@ export const CONTACTS_DATA: IContactData[] = [
     createdAt: formatCurrentDate(),
   },
   {
+    id: uniqid(),
     image: userImage2,
     name: "Elena Sheldon",
     email: "elena.sheldon@gmail.com",
@@ -127,6 +142,7 @@ export const CONTACTS_DATA: IContactData[] = [
     createdAt: formatCurrentDate(),
   },
   {
+    id: uniqid(),
     image: userImage3,
     name: "Kim Gould",
     email: "kim.gould@gmail.com",

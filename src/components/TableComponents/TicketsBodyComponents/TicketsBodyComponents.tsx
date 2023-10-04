@@ -24,7 +24,7 @@ const TicketsBodyComponents = ({
   return (
     <TableBody>
       {tableData.map((rowData) => (
-        <BodyRow key={`${Math.random()} ${Math.random()}`}>
+        <BodyRow key={rowData.id}>
           <TableCell align="left">
             <UserBox>
               <UserPhoto src={rowData.image} alt="userPhoto" />
