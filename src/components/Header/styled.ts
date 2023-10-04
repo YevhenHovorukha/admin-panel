@@ -1,6 +1,8 @@
 import { Box, IconButton, Typography } from "@mui/material";
 import styled from "styled-components";
 
+import { THEME } from "../../theme";
+
 export const HeaderBox = styled.header`
   margin-bottom: 58px;
   display: flex;
@@ -20,26 +22,26 @@ export const HeaderInfoBox = styled(Box)`
 `;
 
 export const HeaderIconButton = styled(IconButton)`
-  margin-left: 24px;
+  margin-left: ${THEME.SIZES.MARGIN.M24};
 `;
 
 export const VerticalLine = styled.div`
   margin: 0 32px 0;
   width: 1px;
   height: 32px;
-  background-color: #dfe0eb;
+  background-color: ${THEME.COLORS.LIGHT_GRAY};
 `;
 
 export const UserName = styled(Typography)`
-  color: #252733;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0.2px;
+  color: ${THEME.COLORS.BLACK};
+  font-size: ${THEME.SIZES.FONT.MEDIUM}
+  font-weight: ${THEME.FONTS.WEIGHT.W600};
+  line-height: ${THEME.SIZES.LINE_HEIGHT.LH20};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
 `;
 
 export const UserPhoto = styled.img`
-  margin-left: 14px;
+  margin-left: ${THEME.SIZES.MARGIN.M14};
   width: 42px;
   height: 42px;
   border-radius: 50%;

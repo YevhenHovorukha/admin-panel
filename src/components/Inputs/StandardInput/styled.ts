@@ -1,5 +1,7 @@
-import { TextField, Typography, IconButton } from "@mui/material";
+import { TextField, Typography } from "@mui/material";
 import styled from "styled-components";
+
+import { THEME } from "../../../theme";
 
 export const StyledTextField = styled(TextField)`
   padding: 0;
@@ -23,10 +25,10 @@ export const StyledTextField = styled(TextField)`
 
 export const StyledLabel = styled(Typography)`
   display: block;
-  color: #9fa2b4;
-  font-size: 12px;
-  font-weight: 700;
+  color: ${THEME.COLORS.GRAY};
+  font-size: ${THEME.SIZES.FONT.SMALL};
+  font-weight: ${THEME.FONTS.WEIGHT.W700};
   height: 16px;
-  letter-spacing: 0.3px;
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS03};
   text-transform: uppercase;
 `;

@@ -34,7 +34,7 @@ const TicketsTable = () => {
   return (
     <>
       <TableContainer component={Paper}>
-        <PreHeaderBox handleOpen={handleOpen} />
+        <PreHeaderBox handleOpen={handleOpen} text="ticket" />
         <StyledTable aria-label="simple table">
           <HeadComponents
             columnsNames={[

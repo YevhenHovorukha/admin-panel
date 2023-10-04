@@ -2,8 +2,10 @@ import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 import Icon from "@mui/material/Icon";
 
+import { THEME } from "../../theme";
+
 export const MenuBox = styled.nav`
-  background-color: #363740;
+  background-color: ${THEME.COLORS.NAVY};
   width: 255px;
   min-height: 100vh;
 `;
@@ -22,14 +24,14 @@ export const LogoIcon = styled(Icon)`
 `;
 
 export const LogoText = styled(Typography)`
-  font-size: 19px;
-  font-weight: 700;
-  color: #a4a6b3;
-  letter-spacing: 0.4px;
+  font-size: ${THEME.SIZES.FONT.SEMI_BIG};
+  font-weight: ${THEME.FONTS.WEIGHT.W700};
+  color: ${THEME.COLORS.MIDDLE_GRAY};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS04};
 `;
 
 export const StyledLine = styled.hr`
-  color: #dfe0eb;
+  color: ${THEME.COLORS.LIGHT_GRAY};
   margin: 16px 0;
   opacity: 0.06;
 `;

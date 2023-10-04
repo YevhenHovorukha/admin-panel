@@ -1,8 +1,10 @@
 import { Container } from "@mui/material";
 import styled from "styled-components";
 
+import { THEME } from "../../theme";
+
 const AuthContainer = styled(Container)`
-  background-color: #363740;
+  background-color: ${THEME.COLORS.NAVY};
   padding: 5%;
   width: 100%;
   min-height: 100vh;

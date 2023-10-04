@@ -1,14 +1,16 @@
 import { TableRow, TableCell } from "@mui/material";
 import styled from "styled-components";
 
+import { THEME } from "../../../theme";
+
 export const HeadRow = styled(TableRow)`
   & > th {
     padding: 7px 0 8px;
     align-items: center;
-    color: #9fa2b4;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 0.2px;
+    color: ${THEME.COLORS.GRAY};
+    font-size: ${THEME.SIZES.FONT.MEDIUM};
+    font-weight: ${THEME.FONTS.WEIGHT.W700};
+    letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
     border-bottom: 2px solid #dfe0eb;
   }
   & th:first-child {

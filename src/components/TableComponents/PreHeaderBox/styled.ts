@@ -1,6 +1,8 @@
 import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 
+import { THEME } from "../../../theme";
+
 export const PreHeaderBoxWrapper = styled(Box)`
   padding: 37px 32px;
   display: flex;
@@ -20,17 +22,18 @@ export const SortAndFilterItem = styled(Box)`
 `;
 
 export const SortAndFilterItemText = styled(Typography)`
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
+  color: ${THEME.COLORS.DARK_GRAY};
+  font-size: ${THEME.SIZES.FONT.MEDIUM};
+  font-weight: ${THEME.FONTS.WEIGHT.W600};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
 `;
 
-export const AddContactText = styled(Typography)`
-  color: #3751ff;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 20px;
-  letter-spacing: 0.2px;
+export const AddText = styled(Typography)`
+  color: ${THEME.COLORS.MAIN_BLUE};
+  font-size: ${THEME.SIZES.FONT.MEDIUM};
+  font-weight: ${THEME.FONTS.WEIGHT.W600};
+  line-height: ${THEME.SIZES.LINE_HEIGHT.LH20};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
   cursor: pointer;
 `;
 

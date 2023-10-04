@@ -1,14 +1,12 @@
 import { useForm } from "react-hook-form";
-import { Modal } from "@mui/material";
 
 import FormBox from "../FormBox";
 import StandardInput from "../Inputs/StandardInput";
 import FormButton from "../FormButton";
 import DateInput from "../Inputs/DateInput";
 import FormSelect from "../Inputs/FormSelect/FormSelect";
-import { CONTACTS_DATA } from "../../constants";
 
-import { CancelText, MainModalText, ModalBox } from "./styled";
+import { CancelText, MainModalText, ModalBox, StyledModal } from "./styled";
 
 interface ITicketsModalProps {
   open: boolean;
@@ -17,10 +15,9 @@ interface ITicketsModalProps {
 
 const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
   const { register, handleSubmit } = useForm();
-  console.log(CONTACTS_DATA);
 
   return (
-    <Modal open={open} onClose={handleClose}>
+    <StyledModal open={open} onClose={handleClose}>
       <ModalBox>
         <MainModalText variant="h2">Add tickets</MainModalText>
         <FormBox
@@ -56,7 +53,7 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
         </FormBox>
         <CancelText onClick={handleClose}>Cancel</CancelText>
       </ModalBox>
-    </Modal>
+    </StyledModal>
   );
 };
 

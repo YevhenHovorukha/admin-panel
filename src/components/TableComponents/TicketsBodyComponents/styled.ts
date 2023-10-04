@@ -1,6 +1,8 @@
 import { TableRow, Box } from "@mui/material";
 import styled from "styled-components";
 
+import { THEME } from "../../../theme";
+
 export const BodyRow = styled(TableRow)`
   & > td {
     border-bottom: 2px solid #dfe0eb;
@@ -37,9 +39,9 @@ interface IColorsObj {
 }
 
 const colorsObj: IColorsObj = {
-  red: "#f12b2c",
-  yellow: "#fec400",
-  green: "#29cc97",
+  red: THEME.COLORS.RED,
+  yellow: THEME.COLORS.YELLOW,
+  green: THEME.COLORS.GREEN,
 };
 
 export const PriorityBox = styled(Box)<{
@@ -48,13 +50,14 @@ export const PriorityBox = styled(Box)<{
   height: 24px;
   width: ${(props) => (props.backgroundcolor === "green" ? "76px" : "54px")};
   border-radius: 100px;
-  background: ${(props) => colorsObj[props.backgroundcolor || "red"]};
+  background: ${(props) =>
+    colorsObj[props.backgroundcolor || THEME.COLORS.RED]};
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: ${THEME.COLORS.WHITE};
   font-size: 11px;
-  font-weight: 700;
+  font-weight: ${THEME.FONTS.WEIGHT.W700};
   letter-spacing: 0.5px;
   text-transform: uppercase;
 `;

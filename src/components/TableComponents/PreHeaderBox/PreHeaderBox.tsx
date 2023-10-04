@@ -6,14 +6,15 @@ import {
   SortAndFilterBox,
   SortAndFilterItem,
   SortAndFilterItemText,
-  AddContactText,
+  AddText,
 } from "./styled";
 
 interface IPreHeaderBoxProps {
+  text: string;
   handleOpen: () => void;
 }
 
-const PreHeaderBox = ({ handleOpen }: IPreHeaderBoxProps) => {
+const PreHeaderBox = ({ handleOpen, text }: IPreHeaderBoxProps) => {
   return (
     <PreHeaderBoxWrapper>
       <SortAndFilterBox>
@@ -26,7 +27,7 @@ const PreHeaderBox = ({ handleOpen }: IPreHeaderBoxProps) => {
           <SortAndFilterItemText>Filter</SortAndFilterItemText>
         </SortAndFilterItem>
       </SortAndFilterBox>
-      <AddContactText onClick={handleOpen}>+ &nbsp;Add contact</AddContactText>
+      <AddText onClick={handleOpen}>+ &nbsp;Add {text}</AddText>
     </PreHeaderBoxWrapper>
   );
 };
