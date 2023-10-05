@@ -5,6 +5,10 @@ import StandardInput from "../Inputs/StandardInput";
 import FormButton from "../FormButton";
 import DateInput from "../Inputs/DateInput";
 import FormSelect from "../Inputs/FormSelect/FormSelect";
+import {
+  fullNameValidation,
+  ticketDescriptionValidation,
+} from "../../validation/validation";
 
 import { CancelText, MainModalText, ModalBox, StyledModal } from "./styled";
 
@@ -14,7 +18,11 @@ interface ITicketsModalProps {
 }
 
 const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <StyledModal open={open} onClose={handleClose}>
@@ -31,20 +39,31 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
             register={register}
             registerName={"ticketDetails"}
             label="Add description"
+            options={ticketDescriptionValidation}
+            errors={errors}
           />
+
           <StandardInput
             text="Customer name"
             register={register}
             registerName={"customerName"}
             label="Name"
+            options={fullNameValidation}
+            errors={errors}
           />
 
-          <DateInput register={register} registerName={"date"} label="Date" />
+          <DateInput
+            register={register}
+            registerName={"date"}
+            label="Date"
+            errors={errors}
+          />
 
           <FormSelect
             register={register}
-            registerName={"priority"}
+            registerName="priority"
             label="Priority"
+            errors={errors}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

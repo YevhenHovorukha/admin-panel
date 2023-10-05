@@ -15,7 +15,7 @@ export const ModalBox = styled(Box)`
   flex-direction: column;
   padding: 40px 32px;
   width: 380px;
-  height: 606px;
+  min-height: 606px;
   background: ${THEME.COLORS.WHITE};
 `;
 
@@ -27,7 +27,7 @@ export const MainModalText = styled(Typography)`
 `;
 
 export const CancelText = styled(Typography)`
-  margin-top: auto;
+  margin-top: ${THEME.SIZES.MARGIN.M32};
   color: ${THEME.COLORS.MAIN_BLUE};
   text-align: center;
   font-size: ${THEME.SIZES.FONT.MEDIUM};

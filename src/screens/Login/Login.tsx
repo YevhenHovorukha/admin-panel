@@ -8,9 +8,14 @@ import FormButton from "../../components/FormButton";
 import SignUpText from "../../components/SignUpText";
 import StandardInput from "../../components/Inputs/StandardInput";
 import PasswordInput from "../../components/Inputs/PasswordInput";
+import { emailValidation } from "../../validation/validation";
 
 const Login = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <AuthContainer>
@@ -28,14 +33,17 @@ const Login = () => {
           <StandardInput
             text="Email address"
             register={register}
+            options={emailValidation}
             registerName={"email"}
             label="email"
+            errors={errors}
           />
 
           <PasswordInput
             text="Password"
             register={register}
             registerName={"password"}
+            errors={errors}
             label="password"
           />
 

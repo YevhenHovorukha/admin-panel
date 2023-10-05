@@ -7,9 +7,17 @@ import FormBox from "../../components/FormBox/FormBox";
 import FormButton from "../../components/FormButton";
 import StandardInput from "../../components/Inputs/StandardInput";
 import PasswordInput from "../../components/Inputs/PasswordInput";
+import {
+  emailValidation,
+  fullNameValidation,
+} from "../../validation/validation";
 
 const SignUp = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <AuthContainer>
@@ -29,6 +37,8 @@ const SignUp = () => {
             register={register}
             registerName={"email"}
             label="email"
+            options={emailValidation}
+            errors={errors}
           />
 
           <StandardInput
@@ -36,13 +46,17 @@ const SignUp = () => {
             register={register}
             registerName={"firstName"}
             label="First name"
+            options={fullNameValidation}
+            errors={errors}
           />
 
           <StandardInput
             text="Last Name"
             register={register}
             registerName={"lastName"}
-            label="LAST name"
+            label="Last name"
+            options={fullNameValidation}
+            errors={errors}
           />
 
           <PasswordInput
@@ -50,6 +64,7 @@ const SignUp = () => {
             register={register}
             registerName={"password"}
             label="password"
+            errors={errors}
           />
 
           <PasswordInput
@@ -57,6 +72,7 @@ const SignUp = () => {
             register={register}
             registerName={"confirmPassword"}
             label="confirm password"
+            errors={errors}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

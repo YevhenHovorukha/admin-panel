@@ -10,7 +10,7 @@ export const StyledTextField = styled(TextField)`
   width: 100%;
 
   input[type="date"] {
-    color: #9fa2b4;
+    color: ${THEME.COLORS.BLACK};
   }
 
   input[type="date"]::-webkit-calendar-picker-indicator {
