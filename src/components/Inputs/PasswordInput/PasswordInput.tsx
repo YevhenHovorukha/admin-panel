@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Box } from "@mui/system";
-import { FieldErrors } from "react-hook-form";
 
 import { ReactComponent as EyeIcon } from "../../../assets/logos/isVisible.svg";
-import { StyledLabel, StyledTextField } from "../StandardInput/styled";
-import { passwordValidation } from "../../../validation/validation";
-import { ErrorValidationText } from "../../../validation/styled";
+import {
+  ErrorValidationText,
+  StyledLabel,
+  StyledTextField,
+} from "../StandardInput/styled";
+import { passwordValidation } from "../../../constants/validation";
 
 import { StyledIconButton } from "./styled";
 
@@ -13,7 +15,7 @@ interface IPasswordInputProps {
   text: string;
   registerName: string;
   label: string;
-  errors: FieldErrors;
+  errorMessage: string;
   register: (registerName: string, options: Object) => {};
 }
 
@@ -22,16 +24,13 @@ const PasswordInput = ({
   register,
   label,
   registerName,
-  errors,
+  errorMessage,
 }: IPasswordInputProps) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handlerVisible = () => {
     setIsVisible((prevState) => !prevState);
   };
-
-  const errorMessage = errors[registerName]?.message;
-  const stringErrorMessage = String(errorMessage);
 
   const Icon = {
     endAdornment: (
@@ -50,8 +49,8 @@ const PasswordInput = ({
         InputProps={Icon}
         type={isVisible ? "text" : "password"}
       />
-      {errorMessage && (
-        <ErrorValidationText>{stringErrorMessage}</ErrorValidationText>
+      {errorMessage !== "undefined" && (
+        <ErrorValidationText>{errorMessage}</ErrorValidationText>
       )}
     </Box>
   );

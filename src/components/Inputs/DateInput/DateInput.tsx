@@ -1,14 +1,17 @@
 import { Box } from "@mui/system";
 import { FieldErrors } from "react-hook-form";
 
-import { StyledLabel, StyledTextField } from "../StandardInput/styled";
-import { dateValidation } from "../../../validation/validation";
-import { ErrorValidationText } from "../../../validation/styled";
+import {
+  ErrorValidationText,
+  StyledLabel,
+  StyledTextField,
+} from "../StandardInput/styled";
+import { dateValidation } from "../../../constants/validation";
 
 interface IDateInputProps {
   registerName: string;
   label: string;
-  errors: FieldErrors;
+  errorMessage: string;
   register: (registerName: string, options: Object) => {};
 }
 
@@ -16,11 +19,8 @@ const DateInput = ({
   register,
   label,
   registerName,
-  errors,
+  errorMessage,
 }: IDateInputProps) => {
-  const errorMessage = errors[registerName]?.message;
-  const stringErrorMessage = String(errorMessage);
-
   return (
     <Box>
       <StyledLabel>{label}</StyledLabel>
@@ -28,8 +28,8 @@ const DateInput = ({
         {...register(registerName, dateValidation)}
         type="date"
       />
-      {errorMessage && (
-        <ErrorValidationText>{stringErrorMessage}</ErrorValidationText>
+      {errorMessage !== "undefined" && (
+        <ErrorValidationText>{errorMessage}</ErrorValidationText>
       )}
     </Box>
   );

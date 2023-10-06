@@ -10,7 +10,7 @@ import PasswordInput from "../../components/Inputs/PasswordInput";
 import {
   emailValidation,
   fullNameValidation,
-} from "../../validation/validation";
+} from "../../constants/validation";
 
 const SignUp = () => {
   const {
@@ -38,7 +38,7 @@ const SignUp = () => {
             registerName={"email"}
             label="email"
             options={emailValidation}
-            errors={errors}
+            errorMessage={String(errors["email"]?.message)}
           />
 
           <StandardInput
@@ -47,7 +47,7 @@ const SignUp = () => {
             registerName={"firstName"}
             label="First name"
             options={fullNameValidation}
-            errors={errors}
+            errorMessage={String(errors["firstName"]?.message)}
           />
 
           <StandardInput
@@ -56,7 +56,7 @@ const SignUp = () => {
             registerName={"lastName"}
             label="Last name"
             options={fullNameValidation}
-            errors={errors}
+            errorMessage={String(errors["lastName"]?.message)}
           />
 
           <PasswordInput
@@ -64,7 +64,7 @@ const SignUp = () => {
             register={register}
             registerName={"password"}
             label="password"
-            errors={errors}
+            errorMessage={String(errors["password"]?.message)}
           />
 
           <PasswordInput
@@ -72,7 +72,7 @@ const SignUp = () => {
             register={register}
             registerName={"confirmPassword"}
             label="confirm password"
-            errors={errors}
+            errorMessage={String(errors["confirmPassword"]?.message)}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

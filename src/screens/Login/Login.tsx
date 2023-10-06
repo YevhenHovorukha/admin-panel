@@ -8,7 +8,7 @@ import FormButton from "../../components/FormButton";
 import SignUpText from "../../components/SignUpText";
 import StandardInput from "../../components/Inputs/StandardInput";
 import PasswordInput from "../../components/Inputs/PasswordInput";
-import { emailValidation } from "../../validation/validation";
+import { emailValidation } from "../../constants/validation";
 
 const Login = () => {
   const {
@@ -36,14 +36,14 @@ const Login = () => {
             options={emailValidation}
             registerName={"email"}
             label="email"
-            errors={errors}
+            errorMessage={String(errors["email"]?.message)}
           />
 
           <PasswordInput
             text="Password"
             register={register}
             registerName={"password"}
-            errors={errors}
+            errorMessage={String(errors["password"]?.message)}
             label="password"
           />
 

@@ -8,7 +8,7 @@ import FormSelect from "../Inputs/FormSelect/FormSelect";
 import {
   fullNameValidation,
   ticketDescriptionValidation,
-} from "../../validation/validation";
+} from "../../constants/validation";
 
 import { CancelText, MainModalText, ModalBox, StyledModal } from "./styled";
 
@@ -40,7 +40,7 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
             registerName={"ticketDetails"}
             label="Add description"
             options={ticketDescriptionValidation}
-            errors={errors}
+            errorMessage={String(errors["ticketDetails"]?.message)}
           />
 
           <StandardInput
@@ -49,21 +49,21 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
             registerName={"customerName"}
             label="Name"
             options={fullNameValidation}
-            errors={errors}
+            errorMessage={String(errors["customerName"]?.message)}
           />
 
           <DateInput
             register={register}
             registerName={"date"}
             label="Date"
-            errors={errors}
+            errorMessage={String(errors["date"]?.message)}
           />
 
           <FormSelect
             register={register}
             registerName="priority"
             label="Priority"
-            errors={errors}
+            errorMessage={String(errors["priority"]?.message)}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

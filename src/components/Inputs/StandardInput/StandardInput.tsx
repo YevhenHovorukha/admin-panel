@@ -1,9 +1,6 @@
 import { Box } from "@mui/system";
-import { FieldErrors } from "react-hook-form";
 
-import { ErrorValidationText } from "../../../validation/styled";
-
-import { StyledTextField, StyledLabel } from "./styled";
+import { StyledTextField, StyledLabel, ErrorValidationText } from "./styled";
 
 interface IStanderdInputProps {
   text: string;
@@ -11,7 +8,7 @@ interface IStanderdInputProps {
   label: string;
   options: Object;
   register: (registerName: string, options: Object) => {};
-  errors: FieldErrors;
+  errorMessage: string;
 }
 
 const StandardInput = ({
@@ -20,10 +17,8 @@ const StandardInput = ({
   label,
   registerName,
   options,
-  errors,
+  errorMessage,
 }: IStanderdInputProps) => {
-  const errorMessage = errors[registerName]?.message;
-  const stringErrorMessage = String(errorMessage);
   return (
     <Box>
       <StyledLabel>{label}</StyledLabel>
@@ -32,8 +27,8 @@ const StandardInput = ({
         {...register(registerName, options)}
         type="text"
       />
-      {errorMessage && (
-        <ErrorValidationText>{stringErrorMessage}</ErrorValidationText>
+      {errorMessage !== "undefined" && (
+        <ErrorValidationText>{errorMessage}</ErrorValidationText>
       )}
     </Box>
   );
