@@ -2,6 +2,8 @@ import { Icon, Typography } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+import { THEME } from "../../theme";
+
 export const StyledMenuLink = styled(NavLink)`
   width: 100%;
   height: 56px;
@@ -12,7 +14,7 @@ export const StyledMenuLink = styled(NavLink)`
   text-decoration: none;
 
   &.active {
-    color: white;
+    color: ${THEME.COLORS.WHITE};
     background-color: rgba(159, 162, 180, 0.08);
     border-left: 3px solid #dde2ff;
   }
@@ -26,7 +28,7 @@ export const MenuItemIcon = styled(Icon)`
 
 export const MenuItemText = styled(Typography)<{ $isActive?: boolean }>`
   color: ${(props) => (props.$isActive ? "#dde2ff" : "#a4a6b3")};
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.2px;
+  font-size: ${THEME.SIZES.FONT.REGULAR};
+  font-weight: ${THEME.FONTS.WEIGHT.W400};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
 `;

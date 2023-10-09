@@ -1,14 +1,23 @@
 import { useForm } from "react-hook-form";
 
-import AuthInput from "../../components/AuthInput";
 import AuthCardInfo from "../../components/AuthCardInfo";
 import AuthContainer from "../../components/AuthContainer";
 import AuthCard from "../../components/AuthCard";
 import FormBox from "../../components/FormBox/FormBox";
 import FormButton from "../../components/FormButton";
+import StandardInput from "../../components/Inputs/StandardInput";
+import PasswordInput from "../../components/Inputs/PasswordInput";
+import {
+  emailValidation,
+  fullNameValidation,
+} from "../../constants/validation";
 
 const SignUp = () => {
-  const { register, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
   return (
     <AuthContainer>
@@ -23,41 +32,47 @@ const SignUp = () => {
             console.log(data);
           })}
         >
-          <AuthInput
+          <StandardInput
             text="Email address"
             register={register}
             registerName={"email"}
             label="email"
+            options={emailValidation}
+            errorMessage={errors["email"]?.message}
           />
 
-          <AuthInput
+          <StandardInput
             text="First Name"
             register={register}
             registerName={"firstName"}
             label="First name"
+            options={fullNameValidation}
+            errorMessage={errors["firstName"]?.message}
           />
 
-          <AuthInput
+          <StandardInput
             text="Last Name"
             register={register}
             registerName={"lastName"}
-            label="LAST name"
+            label="Last name"
+            options={fullNameValidation}
+            errorMessage={errors["lastName"]?.message}
           />
 
-          <AuthInput
+          <PasswordInput
             text="Password"
             register={register}
             registerName={"password"}
-            isPassword={true}
             label="password"
+            errorMessage={errors["password"]?.message}
           />
 
-          <AuthInput
+          <PasswordInput
             text="Password"
             register={register}
             registerName={"confirmPassword"}
-            isPassword={true}
             label="confirm password"
+            errorMessage={errors["confirmPassword"]?.message}
           />
 
           <FormButton type="submit" variant="contained" color="primary">
