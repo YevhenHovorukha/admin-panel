@@ -1,5 +1,6 @@
 import { useForm } from "react-hook-form";
 
+import FileInput from "../Inputs/FileInput";
 import FormBox from "../FormBox";
 import StandardInput from "../Inputs/StandardInput";
 import FormButton from "../FormButton";
@@ -26,6 +27,8 @@ const ContactsModal = ({ open, handleClose }: ITicketsModalProps) => {
 
   const avatar = watch("avatar");
 
+  const avatarURL = avatar && avatar[0] ? URL.createObjectURL(avatar[0]) : "";
+
   return (
     <StyledModal open={open} onClose={handleClose}>
       <ModalBox>
@@ -36,25 +39,12 @@ const ContactsModal = ({ open, handleClose }: ITicketsModalProps) => {
             console.log(data);
           })}
         >
-          <label htmlFor="fileInput">
-            <p>add</p>
-          </label>
-
-          <input
-            type="file"
-            {...register("avatar")}
-            accept=".jpg, .jpeg, .png, .gif"
-            style={{ display: "none" }}
-            id="fileInput"
+          <FileInput
+            register={register}
+            registerName="avatar"
+            url={avatarURL}
+            errorMessage={errors["avatar"]?.message}
           />
-          {/* 
-          {avatar && (
-            <img
-              src={URL.createObjectURL(avatar[0])}
-              alt="Avatar"
-              style={{ maxWidth: "100px", maxHeight: "100px" }}
-            />
-          )} */}
 
           <StandardInput
             text="First Name"
