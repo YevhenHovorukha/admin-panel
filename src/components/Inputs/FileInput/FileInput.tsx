@@ -26,7 +26,7 @@ const FileInput = ({
   errorMessage,
 }: IFileInputProps) => {
   const picture = url ? (
-    <StyledAvatar src={url} alt="picture" />
+    <StyledAvatar src={url} alt="avatar" />
   ) : (
     <GrayCircle>
       <PlusIcon />

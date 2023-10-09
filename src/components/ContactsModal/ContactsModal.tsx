@@ -27,7 +27,7 @@ const ContactsModal = ({ open, handleClose }: ITicketsModalProps) => {
 
   const avatar = watch("avatar");
 
-  const avatarURL = avatar && avatar[0] ? URL.createObjectURL(avatar[0]) : "";
+  const avatarURL = avatar?.[0] && URL.createObjectURL(avatar[0]);
 
   return (
     <StyledModal open={open} onClose={handleClose}>
