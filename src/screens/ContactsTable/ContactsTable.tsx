@@ -1,18 +1,19 @@
 import { useState } from "react";
 import { TableContainer, Paper } from "@mui/material";
 
-import TicketsModal from "../../components/TicketsModal";
+import ContactsModal from "../../components/ContactsModal";
 import PreHeaderBox from "../../components/TableComponents/PreHeaderBox";
 import HeadComponents from "../../components/TableComponents/HeadComponents";
-import TicketsBodyComponents from "../../components/TableComponents/TicketsBodyComponents";
+import ContactsBodyComponents from "../../components/TableComponents/ContactsBodyComponents";
 import { TICKETS_DATA } from "../../constants/mocks";
 import { paginationRowsPerPage } from "../../constants/tableConstants";
+import { StyledPagination } from "../TicketsTable/styled";
 
-import { StyledTable, StyledPagination } from "./styled";
+import { StyledTable } from "./styled";
 
-const columns = ["Ticket details", "Customer name", "Date", "Priority", ""];
+const columns = ["Name", "Email", "Address", "Created at ", ""];
 
-const TicketsTable = () => {
+const ContactsTable = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [open, setOpen] = useState(false);
@@ -37,11 +38,11 @@ const TicketsTable = () => {
   return (
     <>
       <TableContainer component={Paper}>
-        <PreHeaderBox handleOpen={handleOpen} text="ticket" />
+        <PreHeaderBox handleOpen={handleOpen} text="contacts" />
         <StyledTable aria-label="simple table">
-          <HeadComponents columnsNames={columns} isContacts={false} />
+          <HeadComponents columnsNames={columns} isContacts={true} />
 
-          <TicketsBodyComponents page={page} rowsPerPage={rowsPerPage} />
+          <ContactsBodyComponents page={page} rowsPerPage={rowsPerPage} />
         </StyledTable>
         <StyledPagination
           rowsPerPageOptions={paginationRowsPerPage}
@@ -53,9 +54,9 @@ const TicketsTable = () => {
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
       </TableContainer>
-      <TicketsModal open={open} handleClose={handleClose} />
+      <ContactsModal open={open} handleClose={handleClose} />
     </>
   );
 };
 
-export default TicketsTable;
+export default ContactsTable;
