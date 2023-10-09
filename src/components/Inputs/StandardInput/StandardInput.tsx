@@ -1,5 +1,7 @@
 import { Box } from "@mui/system";
 
+import { InputErrorMessage } from "../../../types/inputs";
+
 import { StyledTextField, StyledLabel, ErrorValidationText } from "./styled";
 
 interface IStanderdInputProps {
@@ -8,7 +10,7 @@ interface IStanderdInputProps {
   label: string;
   options: Object;
   register: (registerName: string, options: Object) => {};
-  errorMessage: string;
+  errorMessage: InputErrorMessage;
 }
 
 const StandardInput = ({
@@ -27,8 +29,8 @@ const StandardInput = ({
         {...register(registerName, options)}
         type="text"
       />
-      {errorMessage !== "undefined" && (
-        <ErrorValidationText>{errorMessage}</ErrorValidationText>
+      {errorMessage && (
+        <ErrorValidationText>{String(errorMessage)}</ErrorValidationText>
       )}
     </Box>
   );

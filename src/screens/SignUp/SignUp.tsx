@@ -38,7 +38,7 @@ const SignUp = () => {
             registerName={"email"}
             label="email"
             options={emailValidation}
-            errorMessage={String(errors["email"]?.message)}
+            errorMessage={errors["email"]?.message}
           />
 
           <StandardInput
@@ -47,7 +47,7 @@ const SignUp = () => {
             registerName={"firstName"}
             label="First name"
             options={fullNameValidation}
-            errorMessage={String(errors["firstName"]?.message)}
+            errorMessage={errors["firstName"]?.message}
           />
 
           <StandardInput
@@ -56,7 +56,7 @@ const SignUp = () => {
             registerName={"lastName"}
             label="Last name"
             options={fullNameValidation}
-            errorMessage={String(errors["lastName"]?.message)}
+            errorMessage={errors["lastName"]?.message}
           />
 
           <PasswordInput
@@ -64,7 +64,7 @@ const SignUp = () => {
             register={register}
             registerName={"password"}
             label="password"
-            errorMessage={String(errors["password"]?.message)}
+            errorMessage={errors["password"]?.message}
           />
 
           <PasswordInput
@@ -72,7 +72,7 @@ const SignUp = () => {
             register={register}
             registerName={"confirmPassword"}
             label="confirm password"
-            errorMessage={String(errors["confirmPassword"]?.message)}
+            errorMessage={errors["confirmPassword"]?.message}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

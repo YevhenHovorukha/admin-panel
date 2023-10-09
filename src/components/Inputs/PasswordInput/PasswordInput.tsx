@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Box } from "@mui/system";
 
+import { InputErrorMessage } from "../../../types/inputs";
 import { ReactComponent as EyeIcon } from "../../../assets/logos/isVisible.svg";
 import {
   ErrorValidationText,
@@ -15,7 +16,7 @@ interface IPasswordInputProps {
   text: string;
   registerName: string;
   label: string;
-  errorMessage: string;
+  errorMessage: InputErrorMessage;
   register: (registerName: string, options: Object) => {};
 }
 
@@ -49,8 +50,8 @@ const PasswordInput = ({
         InputProps={Icon}
         type={isVisible ? "text" : "password"}
       />
-      {errorMessage !== "undefined" && (
-        <ErrorValidationText>{errorMessage}</ErrorValidationText>
+      {errorMessage && (
+        <ErrorValidationText>{String(errorMessage)}</ErrorValidationText>
       )}
     </Box>
   );

@@ -36,19 +36,19 @@ const Login = () => {
             options={emailValidation}
             registerName={"email"}
             label="email"
-            errorMessage={String(errors["email"]?.message)}
+            errorMessage={errors["email"]?.message}
           />
 
           <PasswordInput
             text="Password"
             register={register}
             registerName={"password"}
-            errorMessage={String(errors["password"]?.message)}
+            errorMessage={errors["password"]?.message}
             label="password"
           />
 
           <FormButton type="submit" variant="contained" color="primary">
-            Register
+            Log in
           </FormButton>
         </FormBox>
         <SignUpText />

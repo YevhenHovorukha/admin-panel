@@ -40,7 +40,7 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
             registerName={"ticketDetails"}
             label="Add description"
             options={ticketDescriptionValidation}
-            errorMessage={String(errors["ticketDetails"]?.message)}
+            errorMessage={errors["ticketDetails"]?.message}
           />
 
           <StandardInput
@@ -49,21 +49,21 @@ const TicketsModal = ({ open, handleClose }: ITicketsModalProps) => {
             registerName={"customerName"}
             label="Name"
             options={fullNameValidation}
-            errorMessage={String(errors["customerName"]?.message)}
+            errorMessage={errors["customerName"]?.message}
           />
 
           <DateInput
             register={register}
             registerName={"date"}
             label="Date"
-            errorMessage={String(errors["date"]?.message)}
+            errorMessage={errors["date"]?.message}
           />
 
           <FormSelect
             register={register}
             registerName="priority"
             label="Priority"
-            errorMessage={String(errors["priority"]?.message)}
+            errorMessage={errors["priority"]?.message}
           />
 
           <FormButton type="submit" variant="contained" color="primary">

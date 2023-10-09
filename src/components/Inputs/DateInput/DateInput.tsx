@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
-import { FieldErrors } from "react-hook-form";
 
+import { InputErrorMessage } from "../../../types/inputs";
 import {
   ErrorValidationText,
   StyledLabel,
@@ -11,7 +11,7 @@ import { dateValidation } from "../../../constants/validation";
 interface IDateInputProps {
   registerName: string;
   label: string;
-  errorMessage: string;
+  errorMessage: InputErrorMessage;
   register: (registerName: string, options: Object) => {};
 }
 
@@ -28,8 +28,8 @@ const DateInput = ({
         {...register(registerName, dateValidation)}
         type="date"
       />
-      {errorMessage !== "undefined" && (
-        <ErrorValidationText>{errorMessage}</ErrorValidationText>
+      {errorMessage && (
+        <ErrorValidationText>{String(errorMessage)}</ErrorValidationText>
       )}
     </Box>
   );

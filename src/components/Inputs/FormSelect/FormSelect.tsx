@@ -1,6 +1,6 @@
 import { Box, FormControl, InputLabel, MenuItem } from "@mui/material";
-import { FieldErrors } from "react-hook-form";
 
+import { InputErrorMessage } from "../../../types/inputs";
 import { ErrorValidationText, StyledLabel } from "../StandardInput/styled";
 
 import { StyledSelect } from "./styled";
@@ -8,7 +8,7 @@ import { StyledSelect } from "./styled";
 interface IFormSelect {
   registerName: string;
   label: string;
-  errorMessage: string;
+  errorMessage: InputErrorMessage;
   register: (registerName: string, options: Object) => {};
 }
 
@@ -33,8 +33,8 @@ const FormSelect = ({
           <MenuItem value="normal">Normal</MenuItem>
         </StyledSelect>
       </FormControl>
-      {errorMessage !== "undefined" && (
-        <ErrorValidationText>{errorMessage}</ErrorValidationText>
+      {errorMessage && (
+        <ErrorValidationText>{String(errorMessage)}</ErrorValidationText>
       )}
     </Box>
   );
