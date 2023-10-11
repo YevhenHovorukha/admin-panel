@@ -3,6 +3,7 @@ import uniqid from "uniqid";
 import userImage from "../assets/images/UserImage.png";
 import userImage2 from "../assets/images/User2Image.png";
 import userImage3 from "../assets/images/User3image.png";
+import userImage4 from "../assets/images/User4image.png";
 
 interface ITicketData {
   id: string;
@@ -173,14 +174,14 @@ export const IDEAS_DATA: IIdeasData[] = [
   },
   {
     id: uniqid(),
-    image: userImage,
-    name: "Mandeep Walton",
-    idea: "Visualize data trends and insights",
-  },
-  {
-    id: uniqid(),
     image: userImage3,
     name: "Kim Gould",
     idea: "In-app messaging or email notifications to users",
+  },
+  {
+    id: uniqid(),
+    image: userImage4,
+    name: "Lucas Harrington",
+    idea: "General system settings (e.g., site name, logo, email configuration)",
   },
 ];
