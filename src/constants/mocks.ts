@@ -150,3 +150,37 @@ export const CONTACTS_DATA: IContactData[] = [
     createdAt: formatCurrentDate(),
   },
 ];
+
+interface IIdeasData {
+  id: string;
+  image: string;
+  name: string;
+  idea: string;
+}
+
+export const IDEAS_DATA: IIdeasData[] = [
+  {
+    id: uniqid(),
+    image: userImage,
+    name: "Mandeep Walton",
+    idea: "Visualize data trends and insights",
+  },
+  {
+    id: uniqid(),
+    image: userImage2,
+    name: "Elena Sheldon",
+    idea: "Localization and language settings",
+  },
+  {
+    id: uniqid(),
+    image: userImage,
+    name: "Mandeep Walton",
+    idea: "Visualize data trends and insights",
+  },
+  {
+    id: uniqid(),
+    image: userImage3,
+    name: "Kim Gould",
+    idea: "In-app messaging or email notifications to users",
+  },
+];
