@@ -8,6 +8,7 @@ export const StyledModal = styled(Modal)`
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 `;
 
 export const ModalBox = styled(Box)`
