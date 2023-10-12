@@ -1,8 +1,19 @@
 import ReactDOM from "react-dom/client";
-import { StyledEngineProvider, GlobalStyles } from "@mui/material";
+import {
+  StyledEngineProvider,
+  GlobalStyles,
+  ThemeProvider,
+  createTheme,
+} from "@mui/material";
 
 import App from "./App";
 import { THEME } from "./theme";
+
+export const theme = createTheme({
+  typography: {
+    fontFamily: THEME.FONTS.REGULAR,
+  },
+});
 
 const globalStyles = {
   "*": {
@@ -17,7 +28,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StyledEngineProvider injectFirst>
-    <GlobalStyles styles={globalStyles} />
-    <App />
+    <ThemeProvider theme={theme}>
+      <GlobalStyles styles={globalStyles} />
+      <App />
+    </ThemeProvider>
   </StyledEngineProvider>
 );

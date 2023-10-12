@@ -64,3 +64,15 @@ export const ticketDescriptionValidation = {
     message: "Description must be at most 500 characters long",
   },
 };
+
+export const addressValidation = {
+  required: "Address is required",
+  minLength: {
+    value: 5,
+    message: "Address must be at least 5 characters long",
+  },
+  maxLength: {
+    value: 100,
+    message: "Address must be at most 100 characters long",
+  },
+};

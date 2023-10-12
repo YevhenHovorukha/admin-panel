@@ -26,7 +26,7 @@ export interface ICellObj {
   fifth: string;
 }
 
-const cellObj: ICellObj = {
+const TicketsObj: ICellObj = {
   first: "512px",
   second: "248px",
   third: "180px",
@@ -34,6 +34,22 @@ const cellObj: ICellObj = {
   fifth: "77px",
 };
 
-export const StyledHeadCell = styled(TableCell)<{ $cellWidth: keyof ICellObj }>`
-  min-width: ${(props) => cellObj[props.$cellWidth]};
+const ContactsObj: ICellObj = {
+  first: "400px",
+  second: "248px",
+  third: "248px",
+  fourth: "170px",
+  fifth: "56px",
+};
+
+interface StyledHeadCellProps {
+  $cellWidth: keyof ICellObj;
+  $isContacts: boolean; // Добавляем $isContacts с соответствующим типом
+}
+
+export const StyledHeadCell = styled(TableCell)<StyledHeadCellProps>`
+  min-width: ${(props) =>
+    props.$isContacts
+      ? ContactsObj[props.$cellWidth]
+      : TicketsObj[props.$cellWidth]};
 `;

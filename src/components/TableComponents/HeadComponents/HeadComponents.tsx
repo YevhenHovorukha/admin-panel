@@ -4,9 +4,10 @@ import { HeadRow, ICellObj, StyledHeadCell } from "./styled";
 
 interface IHeadComponentsProps {
   columnsNames: string[];
+  isContacts: boolean;
 }
 
-const HeadComponents = ({ columnsNames }: IHeadComponentsProps) => {
+const HeadComponents = ({ columnsNames, isContacts }: IHeadComponentsProps) => {
   const CellWidthArray: (keyof ICellObj)[] = [
     "first",
     "second",
@@ -22,6 +23,7 @@ const HeadComponents = ({ columnsNames }: IHeadComponentsProps) => {
           <StyledHeadCell
             key={item}
             $cellWidth={CellWidthArray[index] || "fifth"}
+            $isContacts={isContacts}
             align="left"
           >
             {item}
