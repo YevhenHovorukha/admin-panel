@@ -1,3 +1,5 @@
+import { memo } from "react";
+
 import {
   CardBox,
   IdeaText,
@@ -13,7 +15,7 @@ interface IIdeasCardProps {
   idea: string;
 }
 
-const IdeasCard = ({ image, name, idea }: IIdeasCardProps) => {
+const IdeasCard = memo(({ image, name, idea }: IIdeasCardProps) => {
   return (
     <CardBox>
       <UserBox>
@@ -24,6 +26,6 @@ const IdeasCard = ({ image, name, idea }: IIdeasCardProps) => {
       <IdeaText>{idea}</IdeaText>
     </CardBox>
   );
-};
+});
 
 export default IdeasCard;
