@@ -47,7 +47,7 @@ export const SIZES = {
 };
 
 export const FONTS = {
-  REGULAR: "Mulish",
+  REGULAR: "Mulish, Roboto, sans-serif",
   WEIGHT: { W600: "600", W700: "700", W400: "400" },
 };
 

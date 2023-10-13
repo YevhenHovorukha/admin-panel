@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ROUTES from "./routes";
+import ContactsTable from "./screens/ContactsTable";
 
 const IdeasPage = lazy(() => import("./screens/IdeasePage"));
 const TicketsTable = lazy(() => import("./screens/TicketsTable"));
@@ -19,7 +20,7 @@ const App = () => {
             <Route index element={<h1>1</h1>} />
             <Route path={ROUTES.TICKETS} element={<TicketsTable />} />
             <Route path={ROUTES.IDEAS} element={<IdeasPage />} />
-            <Route path={ROUTES.CONTACTS} element={<h1>Contacts</h1>} />
+            <Route path={ROUTES.CONTACTS} element={<ContactsTable />} />
           </Route>
 
           <Route path={ROUTES.LOGIN} element={<Login />} />
