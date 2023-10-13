@@ -2,8 +2,9 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ROUTES from "./routes";
-import ContactsTable from "./screens/ContactsTable";
 
+const OverviewPage = lazy(() => import("./screens/OverviewPage"));
+const ContactsTable = lazy(() => import("./screens/ContactsTable"));
 const IdeasPage = lazy(() => import("./screens/IdeasePage"));
 const TicketsTable = lazy(() => import("./screens/TicketsTable"));
 const MainLayout = lazy(() => import("./screens/MainLayout"));
@@ -17,7 +18,7 @@ const App = () => {
       <Suspense fallback={<h1>...Loading</h1>}>
         <Routes>
           <Route path={ROUTES.HOME} element={<MainLayout />}>
-            <Route index element={<h1>1</h1>} />
+            <Route index element={<OverviewPage />} />
             <Route path={ROUTES.TICKETS} element={<TicketsTable />} />
             <Route path={ROUTES.IDEAS} element={<IdeasPage />} />
             <Route path={ROUTES.CONTACTS} element={<ContactsTable />} />

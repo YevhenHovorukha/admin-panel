@@ -233,3 +233,16 @@ export const IDEAS_DATA: IIdeasData[] = [
     idea: "General system settings (e.g., site name, logo, email configuration)",
   },
 ];
+
+interface IBoxInfo {
+  id: string;
+  title: string;
+  value: number;
+}
+
+export const DATA_INFO_BOX: IBoxInfo[] = [
+  { id: uniqid(), title: "Unresolved", value: 60 },
+  { id: uniqid(), title: "Overdue", value: 16 },
+  { id: uniqid(), title: "Open", value: 43 },
+  { id: uniqid(), title: "On hold", value: 64 },
+];
