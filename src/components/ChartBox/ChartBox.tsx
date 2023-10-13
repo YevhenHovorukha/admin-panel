@@ -1,5 +1,4 @@
 import {
-  ChartContainer,
   ChartHeadText,
   ChartInfoText,
   InfoBox,
@@ -10,7 +9,7 @@ import {
 
 const ChartBox = () => {
   return (
-    <ChartContainer>
+    <>
       <ChartHeadText variant="h2">Today’s trends</ChartHeadText>
       <InfoBox>
         <ChartInfoText>as of 25 May 2019, 09:41 PM</ChartInfoText>
@@ -29,7 +28,7 @@ const ChartBox = () => {
           </MarkerBox>
         </MarkerBox>
       </InfoBox>
-    </ChartContainer>
+    </>
   );
 };
 

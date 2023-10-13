@@ -3,12 +3,6 @@ import styled from "styled-components";
 
 import { THEME } from "../../theme";
 
-export const ChartContainer = styled(Box)`
-  width: 780px;
-  padding: 32px;
-  border-right: 1px solid ${THEME.COLORS.LIGHT_GRAY};
-`;
-
 export const InfoBox = styled(Box)`
   display: flex;
   justify-content: space-between;

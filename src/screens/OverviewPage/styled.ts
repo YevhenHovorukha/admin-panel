@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import styled from "styled-components";
 
 import { THEME } from "../../theme";
@@ -16,4 +16,10 @@ export const MainOverview = styled(Box)`
   border-radius: 8px;
   border: 1px solid ${THEME.COLORS.LIGHT_GRAY};
   background: ${THEME.COLORS.WHITE};
+`;
+
+export const ChartContainer = styled(Box)`
+  width: 780px;
+  padding: 32px;
+  border-right: 1px solid ${THEME.COLORS.LIGHT_GRAY};
 `;

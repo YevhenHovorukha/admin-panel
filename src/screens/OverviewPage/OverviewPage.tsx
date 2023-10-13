@@ -1,8 +1,9 @@
 import ChartBox from "../../components/ChartBox";
 import InfoBox from "../../components/InfoBox";
+import OverviewChart from "../../components/OverviewChart";
 import { DATA_INFO_BOX } from "../../constants/mocks";
 
-import { InfoBoxContainer, MainOverview } from "./styled";
+import { InfoBoxContainer, MainOverview, ChartContainer } from "./styled";
 
 const OverviewPage = () => {
   return (
@@ -13,7 +14,10 @@ const OverviewPage = () => {
         ))}
       </InfoBoxContainer>
       <MainOverview>
-        <ChartBox></ChartBox>
+        <ChartContainer>
+          <ChartBox />
+          <OverviewChart />
+        </ChartContainer>
       </MainOverview>
     </>
   );
