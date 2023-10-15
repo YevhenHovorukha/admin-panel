@@ -17,6 +17,7 @@ export const COLORS = {
 
 export const SIZES = {
   FONT: {
+    CHART: "10px",
     SMALL: "12px",
     MEDIUM: "14px",
     REGULAR: "16px",

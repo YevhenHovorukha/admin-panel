@@ -1,6 +1,6 @@
 import ChartBox from "../../components/ChartBox";
+import OverviewChart from "../../components/ChartComponents/OverviewChart";
 import InfoBox from "../../components/InfoBox";
-import OverviewChart from "../../components/OverviewChart";
 import { DATA_INFO_BOX } from "../../constants/mocks";
 
 import { InfoBoxContainer, MainOverview, ChartContainer } from "./styled";
