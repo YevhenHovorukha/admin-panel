@@ -32,3 +32,19 @@ export const ChartInfoContainer = styled(Box)`
     border: none;
   }
 `;
+
+export const ListsContainer = styled(Box)`
+  display: flex;
+  margin-top: 30px;
+  gap: 30px;
+`;
+
+export const ListContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: 546px;
+  height: 336px;
+  background: ${THEME.COLORS.WHITE};
+  border-radius: 8px;
+  border: 1px solid ${THEME.COLORS.LIGHT_GRAY};
+`;
