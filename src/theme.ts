@@ -42,8 +42,9 @@ export const SIZES = {
     LS1: "1px",
   },
   LINE_HEIGHT: {
-    LH20: "20px",
     LH16: "16px",
+    LH20: "20px",
+    LH22: "22px",
   },
 };
 

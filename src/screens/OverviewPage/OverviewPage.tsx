@@ -1,9 +1,15 @@
 import ChartBox from "../../components/ChartBox";
 import OverviewChart from "../../components/ChartComponents/OverviewChart";
+import ChartInfoItem from "../../components/ChartInfoItem";
 import InfoBox from "../../components/InfoBox";
-import { DATA_INFO_BOX } from "../../constants/mocks";
+import { DATA_INFO_BOX, CHART_BOX_DATA } from "../../constants/mocks";
 
-import { InfoBoxContainer, MainOverview, ChartContainer } from "./styled";
+import {
+  InfoBoxContainer,
+  MainOverview,
+  ChartContainer,
+  ChartInfoContainer,
+} from "./styled";
 
 const OverviewPage = () => {
   return (
@@ -15,9 +21,14 @@ const OverviewPage = () => {
       </InfoBoxContainer>
       <MainOverview>
         <ChartContainer>
-          <ChartBox />
+          <ChartBox></ChartBox>
           <OverviewChart />
         </ChartContainer>
+        <ChartInfoContainer>
+          {CHART_BOX_DATA.map((item) => (
+            <ChartInfoItem key={item.id} {...item} />
+          ))}
+        </ChartInfoContainer>
       </MainOverview>
     </>
   );

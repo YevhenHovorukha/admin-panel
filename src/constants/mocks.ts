@@ -246,3 +246,17 @@ export const DATA_INFO_BOX: IBoxInfo[] = [
   { id: uniqid(), title: "Open", value: 43 },
   { id: uniqid(), title: "On hold", value: 64 },
 ];
+
+interface IChartBoxData {
+  id: string;
+  text: string;
+  value: string;
+}
+
+export const CHART_BOX_DATA: IChartBoxData[] = [
+  { id: uniqid(), text: "Resolved", value: "449" },
+  { id: uniqid(), text: "Received", value: "426" },
+  { id: uniqid(), text: "Average first response time", value: "33m" },
+  { id: uniqid(), text: "Average response time", value: "3h 8m" },
+  { id: uniqid(), text: "Resolution within SLA", value: "94%" },
+];

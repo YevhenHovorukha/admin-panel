@@ -1,3 +1,4 @@
+import { getCurrentFormattedDate } from "./helpers";
 import {
   ChartHeadText,
   ChartInfoText,
@@ -8,11 +9,12 @@ import {
 } from "./styled";
 
 const ChartBox = () => {
+  const currentFormattedDate = getCurrentFormattedDate();
   return (
     <>
       <ChartHeadText variant="h2">Today’s trends</ChartHeadText>
       <InfoBox>
-        <ChartInfoText>as of 25 May 2019, 09:41 PM</ChartInfoText>
+        <ChartInfoText>as of {currentFormattedDate}</ChartInfoText>
         <MarkerBox $Gap="56px">
           <MarkerBox>
             <LineBox>

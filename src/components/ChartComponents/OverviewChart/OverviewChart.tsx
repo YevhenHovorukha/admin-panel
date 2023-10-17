@@ -80,6 +80,7 @@ const OverviewChart = () => {
         {horizontalLines.map((lineValue, index) => (
           <ReferenceLine key={index} y={lineValue} stroke="#EBEDF0" />
         ))}
+
         <Area
           type="monotone"
           dataKey="uv"

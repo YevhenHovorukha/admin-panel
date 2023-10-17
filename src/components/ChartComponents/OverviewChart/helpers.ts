@@ -42,17 +42,17 @@ export const DATA_CHART = [
   {
     name: 8,
     uv: 5,
-    pv: 32,
+    pv: 12,
   },
   {
     name: 9,
     uv: 5,
-    pv: 32,
+    pv: 49,
   },
   {
     name: 10,
     uv: 5,
-    pv: 32,
+    pv: 16,
   },
 ];
 

@@ -23,3 +23,12 @@ export const ChartContainer = styled(Box)`
   padding: 32px;
   border-right: 1px solid ${THEME.COLORS.LIGHT_GRAY};
 `;
+
+export const ChartInfoContainer = styled(Box)`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  > :last-child {
+    border: none;
+  }
+`;
