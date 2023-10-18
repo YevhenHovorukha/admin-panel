@@ -20,7 +20,7 @@ const ListsHead = ({ text, linkText, info, infoSpan }: IListHeadProps) => {
     <StyledBox>
       <TextContainer>
         <MainText>{text}</MainText>
-        <StyledLink>{linkText}</StyledLink>
+        <StyledLink href="#">{linkText}</StyledLink>
       </TextContainer>
       <InfoText>
         {info} {spanText}

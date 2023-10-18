@@ -260,3 +260,28 @@ export const CHART_BOX_DATA: IChartBoxData[] = [
   { id: uniqid(), text: "Average response time", value: "3h 8m" },
   { id: uniqid(), text: "Resolution within SLA", value: "94%" },
 ];
+
+interface IUnresolvedTickets {
+  id: string;
+  name: string;
+  value: string;
+}
+
+export const UNRESOLVED_TICKETS_DATA: IUnresolvedTickets[] = [
+  { id: uniqid(), name: "Waiting on Feature Request", value: "4238" },
+  { id: uniqid(), name: "Awaiting Customer Response", value: "1005" },
+  { id: uniqid(), name: "Awaiting Developer Fix", value: "914" },
+  { id: uniqid(), name: "Pending", value: "281" },
+];
+
+interface ITasksData {
+  id: string;
+  label: string;
+  status: "urgent" | "new" | "default";
+}
+
+export const TASKS_DATA: ITasksData[] = [
+  { id: uniqid(), label: "Finish ticket update", status: "urgent" },
+  { id: uniqid(), label: "Create new ticket example", status: "new" },
+  { id: uniqid(), label: "Update ticket report", status: "default" },
+];

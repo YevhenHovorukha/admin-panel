@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import styled from "styled-components";
 
 import { THEME } from "../../theme";
@@ -47,4 +47,28 @@ export const ListContainer = styled(Box)`
   background: ${THEME.COLORS.WHITE};
   border-radius: 8px;
   border: 1px solid ${THEME.COLORS.LIGHT_GRAY};
+
+  > :nth-child(2) {
+    padding-top: 0px;
+  }
+  > :last-child {
+    border: none;
+  }
+`;
+
+export const TasksTableHead = styled(Box)`
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 32px 18px;
+  height: 58px;
+  width: 100%;
+  border-bottom: 1px solid ${THEME.COLORS.LIGHT_GRAY};
+`;
+
+export const TasksText = styled(Typography)`
+  color: ${THEME.COLORS.INFO_GRAY};
+  font-size: ${THEME.SIZES.FONT.MEDIUM};
+  font-weight: ${THEME.FONTS.WEIGHT.W600};
+  line-height: ${THEME.SIZES.LINE_HEIGHT.LH20};
+  letter-spacing: ${THEME.SIZES.LETTER_SPACING.LS02};
 `;
