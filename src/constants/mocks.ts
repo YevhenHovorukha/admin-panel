@@ -17,13 +17,13 @@ interface ITicketData {
 export const TICKETS_DATA: ITicketData[] = [
   {
     id: uniqid(),
-    image: userImage,
+    image:
+      "https://s3-alpha-sig.figma.com/img/d127/b57e/902a03afbeb9481feb0bd8cdb7b318d2?Expires=1698624000&Signature=AH0Wjfmrp5pQXTOtV8pJ2i~FULfqASJL93svprXBnmvNd-uBnTd-urpyC6J2rwJ4EorjCrw55QUixhqqL~qcnd7KRed1O-tCkcdsKt~9fUatHGICM-WorXMPJ43PNvXdPlsQsYKVejbmOFz3zv9kGtPRA43pFt~91fvnRvjJx-BhjeGpVetfUUNm65j8y21FHJihj-ypZs4fojBfRNCvJapb8ihZTLs7ildFDlTjvPJ4b2RE5EHV~PAb5glDLIbtJgBfsEEd0uBtWKQWF27ADSXmwVpcrtTAYJ6aoJtm911Qddl2UuKsH6It0xtAbPnRbFNukN1nrLM3uYUT~WXtRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
     details: { text: "Contact Email not Linked", updated: 1 },
     name: { customerName: "Tom Cruise", on: "24.05.2019" },
     date: { day: "May 26, 2019", time: "6:30 PM" },
     priority: "high",
   },
-
   {
     id: uniqid(),
     image: userImage2,
