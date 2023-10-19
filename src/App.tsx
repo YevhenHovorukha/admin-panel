@@ -1,7 +1,10 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import ROUTES from "./routes";
+import { useAppDispatch } from "./redux/store";
+import { fetchTicketsRequest } from "./redux/slice/ticketsSlice";
+import { fetchContactsRequest } from "./redux/slice/contactsSlice";
 
 const OverviewPage = lazy(() => import("./screens/OverviewPage"));
 const ContactsTable = lazy(() => import("./screens/ContactsTable"));
@@ -13,6 +16,11 @@ const Login = lazy(() => import("./screens/Login"));
 const NotFound = lazy(() => import("./screens/NotFound"));
 
 const App = () => {
+  const dispatch = useAppDispatch();
+  useEffect(() => {
+    dispatch(fetchContactsRequest());
+    dispatch(fetchTicketsRequest());
+  }, []);
   return (
     <BrowserRouter>
       <Suspense fallback={<h1>...Loading</h1>}>

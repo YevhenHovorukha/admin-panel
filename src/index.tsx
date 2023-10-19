@@ -5,9 +5,11 @@ import {
   ThemeProvider,
   createTheme,
 } from "@mui/material";
+import { Provider } from "react-redux";
 
 import App from "./App";
 import { THEME } from "./theme";
+import store from "./redux/store";
 
 export const theme = createTheme({
   typography: {
@@ -28,9 +30,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StyledEngineProvider injectFirst>
-    <ThemeProvider theme={theme}>
-      <GlobalStyles styles={globalStyles} />
-      <App />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <GlobalStyles styles={globalStyles} />
+        <App />
+      </ThemeProvider>
+    </Provider>
   </StyledEngineProvider>
 );
