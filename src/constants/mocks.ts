@@ -17,13 +17,13 @@ interface ITicketData {
 export const TICKETS_DATA: ITicketData[] = [
   {
     id: uniqid(),
-    image: userImage,
+    image:
+      "https://s3-alpha-sig.figma.com/img/d127/b57e/902a03afbeb9481feb0bd8cdb7b318d2?Expires=1698624000&Signature=AH0Wjfmrp5pQXTOtV8pJ2i~FULfqASJL93svprXBnmvNd-uBnTd-urpyC6J2rwJ4EorjCrw55QUixhqqL~qcnd7KRed1O-tCkcdsKt~9fUatHGICM-WorXMPJ43PNvXdPlsQsYKVejbmOFz3zv9kGtPRA43pFt~91fvnRvjJx-BhjeGpVetfUUNm65j8y21FHJihj-ypZs4fojBfRNCvJapb8ihZTLs7ildFDlTjvPJ4b2RE5EHV~PAb5glDLIbtJgBfsEEd0uBtWKQWF27ADSXmwVpcrtTAYJ6aoJtm911Qddl2UuKsH6It0xtAbPnRbFNukN1nrLM3uYUT~WXtRg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4",
     details: { text: "Contact Email not Linked", updated: 1 },
     name: { customerName: "Tom Cruise", on: "24.05.2019" },
     date: { day: "May 26, 2019", time: "6:30 PM" },
     priority: "high",
   },
-
   {
     id: uniqid(),
     image: userImage2,
@@ -232,4 +232,56 @@ export const IDEAS_DATA: IIdeasData[] = [
     name: "Lucas Harrington",
     idea: "General system settings (e.g., site name, logo, email configuration)",
   },
+];
+
+interface IBoxInfo {
+  id: string;
+  title: string;
+  value: number;
+}
+
+export const DATA_INFO_BOX: IBoxInfo[] = [
+  { id: uniqid(), title: "Unresolved", value: 60 },
+  { id: uniqid(), title: "Overdue", value: 16 },
+  { id: uniqid(), title: "Open", value: 43 },
+  { id: uniqid(), title: "On hold", value: 64 },
+];
+
+interface IChartBoxData {
+  id: string;
+  text: string;
+  value: string;
+}
+
+export const CHART_BOX_DATA: IChartBoxData[] = [
+  { id: uniqid(), text: "Resolved", value: "449" },
+  { id: uniqid(), text: "Received", value: "426" },
+  { id: uniqid(), text: "Average first response time", value: "33m" },
+  { id: uniqid(), text: "Average response time", value: "3h 8m" },
+  { id: uniqid(), text: "Resolution within SLA", value: "94%" },
+];
+
+interface IUnresolvedTickets {
+  id: string;
+  name: string;
+  value: string;
+}
+
+export const UNRESOLVED_TICKETS_DATA: IUnresolvedTickets[] = [
+  { id: uniqid(), name: "Waiting on Feature Request", value: "4238" },
+  { id: uniqid(), name: "Awaiting Customer Response", value: "1005" },
+  { id: uniqid(), name: "Awaiting Developer Fix", value: "914" },
+  { id: uniqid(), name: "Pending", value: "281" },
+];
+
+interface ITasksData {
+  id: string;
+  label: string;
+  status: "urgent" | "new" | "default";
+}
+
+export const TASKS_DATA: ITasksData[] = [
+  { id: uniqid(), label: "Finish ticket update", status: "urgent" },
+  { id: uniqid(), label: "Create new ticket example", status: "new" },
+  { id: uniqid(), label: "Update ticket report", status: "default" },
 ];

@@ -1,6 +1,6 @@
 export const COLORS = {
   WHITE: "#FFF",
-  BLACK: "#25273",
+  BLACK: "#252733",
   NAVY: "#363740",
   MAIN_BLUE: "#3751FF",
   LIGHT_BLUE: "dde2ff",
@@ -9,6 +9,7 @@ export const COLORS = {
   LIGHT_GRAY: "#dfe0eb",
   DARK_GRAY: "#4B506D",
   INFO_GRAY: "#C5C7CD",
+  LIGHTEST_GRAY: "#F0F1F7",
   RED: "#F12B2C",
   YELLOW: "#FEC400",
   GREEN: "#29CC97",
@@ -17,6 +18,7 @@ export const COLORS = {
 
 export const SIZES = {
   FONT: {
+    CHART: "10px",
     SMALL: "12px",
     MEDIUM: "14px",
     REGULAR: "16px",
@@ -41,8 +43,9 @@ export const SIZES = {
     LS1: "1px",
   },
   LINE_HEIGHT: {
-    LH20: "20px",
     LH16: "16px",
+    LH20: "20px",
+    LH22: "22px",
   },
 };
 
